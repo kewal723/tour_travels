@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barsey Rhododendron Sanctuary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles remain the same */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .topnav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 0.5rem 1rem;
+      }
+      
+      .topnav .left-menu {
+        display: flex;
+        align-items: center;
+      }
+      
+      .topnav .left-menu a {
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-size: larger;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+      .topnav .left-menu a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .topnav .search {
+        margin-left: auto;
+        margin-right: 1rem;
+      }
+      
+      .topnav .search input {
+        padding: 0.5rem;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+      }
+      
+      .topnav .logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .header {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+      
+      .header img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      
+      .header .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-weight: bold;
+      }
+      
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        .topnav {
+          flex-direction: column;
+          padding: 1rem;
+        }
+      
+        .topnav .left-menu {
+          flex-direction: column;
+        }
+      
+        .topnav .left-menu a {
+          padding: 0.5rem 0;
+          font-size: medium;
+        }
+      
+        .topnav .search {
+          margin: 1rem 0 0;
+          width: 100%;
+          text-align: center;
+        }
+      
+        .topnav .search input {
+          width: 80%;
+        }
+      
+        .header .title {
+          font-size: 30px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .header img {
+          height: 200px;
+        }
+      
+        .header .title {
+          font-size: 24px;
+        }
+      
+        .topnav {
+          padding: 0.5rem;
+        }
+      
+        .topnav .search input {
+          width: 90%;
+        }
+      }
+      
+      
+        </style>
+      </head>
+      
+      <body>
+        <div class="topnav">
+          <div class="left-menu">
+            <a class="active"></a>
+            <a href="/share-experience">Experience</a>
+            <a href="/about">About</a>
+            <a href="/create-blog">Blogs</a>
+          </div>
+          <div class="logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+      
+      
+            </div>
+          </div>
+
+
+
+
+
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: url('https://media2.thrillophilia.com/images/photos/000/194/806/original/1587118670_northeast4.jpg?') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 40px;
+            color: #2c3e50;
+            font-family: cursive;
+            padding-top: 10px;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: GREY;
+            max-width: 800px;
+            margin: 30px auto;
+            font-family: cursive;
+        }
+
+        .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: cursive;
+    flex-wrap: wrap;
+    margin-top: 40px; /* Reduced margin-top for a more upward position */
+    padding-top: 80px; /* Reduced padding-top for a more upward position */
+}
+
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            padding-bottom: 50px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+    
+
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-up.show {
+            display: block;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            section p {
+                font-size: 16px;
+            }
+
+            .gallery {
+                justify-content: center;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                max-width: 350px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 80px 10px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+                
+            }
+
+            section p {
+                font-size: 14px;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>NATHULA PASS </h1>
+        <p>Discover the Beauty of nature’s</p>
+    </header>
+
+    <section>
+        <h2>WELCOME NATHULA PASS </h2>
+        <p>Situated at an elevation of 14,140 feet, Nathula Pass is a gateway to the mesmerizing landscapes of the eastern Himalayas. It lies along the border with the Tibet Autonomous Region of China, making it a strategically important and historically rich location. Accessible via a scenic drive from Gangtok, the pass is renowned for its dramatic mountain vistas, serene atmosphere, and the Indo-China Friendship Gate. Visitors can witness the confluence of diverse cultures, explore the nearby Baba Harbhajan Singh Temple, and experience the thrill of standing on one of the highest accessible mountain passes in India.
+
+        </p>
+
+    <section>
+        <h2 style="padding-top: 0%;">Gallery</h2>
+        <div class="gallery">
+            <img src="https://res.cloudinary.com/kmadmin/image/upload/v1618471814/kiomoi/Gangtok_Nathu_La_Pass_1618471813737.jpg" alt="Rhododendron 1">
+            <img src="data:image/jpeg;base64,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" alt="Rhododendron 2">
+            <img src="https://i.ytimg.com/vi/97VD8a5EqZU/maxresdefault.jpg" alt="Rhododendron 3">
+            <img src="https://www.indianholiday.com/wordpress/wp-content/uploads/2024/10/Nathula-Pass-in-Sikkim.jpg">
+            <img src="https://travelogyindia.b-cdn.net/storage/app/upload/nathula-pass.jpg">
+            <img src="https://nomadicweekends.com/blog/wp-content/uploads/2019/03/Tsongmo-Lake-in-Summer.jpg">
+            <img src="https://www.northeast-india.in/wp-content/uploads/DSC_3690.1.800.jpg">
+            <img src="https://holidaystripfactoryblogs.b-cdn.net/wp-content/uploads/sites/6/2024/03/Things-to-Do-1024x576.webp">
+         </div>
+    </div>
+
+    </section>
+
+
+    <script>
+        // Show scroll-up button when the user scrolls down
+        window.onscroll = function () {
+            var scrollUp = document.getElementById('scroll-up');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollUp.classList.add('show');
+            } else {
+                scrollUp.classList.remove('show');
+            }
+        };
+
+        // Scroll to top when button is clicked
+        document.getElementById('scroll-up').onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+
+
+</html>

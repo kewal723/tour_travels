@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+    
+        .topnav {
+          display: flex;
+          justify-content: center;
+          /* Centering the navigation */
+          align-items: center;
+          background-color: #f5f5f5;
+          padding: 0.5rem 1rem;
+        }
+    
+        .topnav .left-menu {
+          display: flex;
+          align-items: center;
+        }
+    
+        .topnav .left-menu a {
+          color: #333;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          font-size: larger;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .topnav .left-menu a:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .topnav .search {
+          margin-left: auto;
+          margin-right: 1rem;
+        }
+    
+        .topnav .search input {
+          padding: 0.5rem;
+          border-radius: 20px;
+          border: 1px solid #ccc;
+        }
+    
+        .topnav .logo {
+          display: flex;
+          align-items: center;
+        }
+    
+    
+    
+        .header {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+    
+        .header img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+    
+        .header .title {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 50px;
+          font-weight: bold;
+        }
+    
+        .menu {
+          display: flex;
+          justify-content: center;
+          background-color: rgb(185, 181, 181);
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .menu-item {
+          margin: 0 15px;
+          text-align: center;
+        }
+    
+        .menu-item img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .menu-item p {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #f3eeee;
+        }
+        .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+        .div {
+          background-color: white;
+          padding-left: 10px;
+          padding-right: 12px;
+        }
+    
+        
+       
+    
+       
+        .destinations {
+          padding: 4rem 0;
+          text-align: center;
+          padding-top: 5px;
+        }
+    
+        .destinations h2 {
+          font-size: 2.5rem;
+          margin-bottom: 2rem;
+        }
+    
+        .destination-container {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+    
+        .destination {
+          flex: 0 1 30%;
+          margin-bottom: 12rem;
+          text-align: left;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .destination img {
+          width: 100%;
+          height: auto;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+    
+        .destination h3 {
+          font-size: 1.5rem;
+          margin: 1rem;
+        }
+    
+        .destination p {
+          padding: 0 1rem 1rem;
+        }
+    
+        .destination:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .rating {
+          display: flex;
+          justify-content: left;
+          margin-top: 10px;
+        }
+    
+        .star {
+          font-size: 24px;
+          color: #ccc;
+          cursor: pointer;
+          transition: color 0.3s;
+        }
+    
+        .star:hover,
+        .star.selected,
+        .star:hover~.star {
+          color: #f5c518;
+        }
+    
+        .btn1 {
+    
+          padding-left: 6px;
+          padding-bottom: 6px;
+          border-radius: 8px;
+          border: none;
+    
+        }
+    
+    .container1{
+     background-color: #dde0dd;
+     height: 100%;
+     padding-top: 45px;
+     text-align: center;
+    
+    
+      }
+      .no-underline {
+      text-decoration: none;
+    }
+    
+      </style>
+    </head>
+    
+    <body>
+      <div class="topnav">
+        <div class="left-menu">
+          <a class="active"></a>
+          <a href="/share-experience">Experience</a>
+          <a href="book.html">Book Now</a>
+          <a href="about.html">About</a>
+          <a href="/create-blog">Blogs</a>
+        </div>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+
+
+          </div>
+        </div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color:transparent;
+            margin: 5% auto;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: animatezoom 0.6s;
+        }
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        .container {
+            padding: 16px;
+            
+        }
+        .container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .container input[type="text"], .container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .container button {
+            background-color: #28a745;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+        .container .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 4px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+            
+        }
+    </style>
+</head>
+<body>
+
+            
+            </body>
+            </html>
+            
+          </nav>
+        </div>
+       <div>
+        <div class="slideshow-container">
+            
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://cvsqtgaxsa.cloudimg.io/https://images.prismic.io/indiahike/0afad85d-2c5f-474d-bc78-45766b1ae43b_Goechala_GCL_lsprasath_sunrise_mountain_.jpg?&func=crop&q=70&org_if_sml=1" alt="Slide 1" style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://trekveda.com/img/packageImage/goechala-trek-3.jpg" alt="Slide 2" style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://www.trekupindia.com/wp-content/uploads/1715/89/Kedartal-Trek-Trekup-India.jpg" alt="Slide 3"  style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+        </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          
+          <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 1000); // Change image every 1 seconds
+            }
+            </script>
+         <style>
+          .container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              margin: 20px auto;
+              max-width: 2000px;
+          }
+      
+          .box {
+              width: 200px;
+              height: 200px;
+              overflow: hidden;
+              position: relative;
+              margin: 10px;
+          }
+      
+          .box img {
+              width: 100%;
+              height: 100%;
+              transition: transform 0.5s ease;
+          }
+      
+          .box:hover img {
+              transform: scale(1.1);
+          }
+      
+          .box .overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+          }
+      
+          .box:hover .overlay {
+              opacity: 1;
+          }
+      
+          .box .overlay span {
+              color: #fff;
+              font-size: 24px;
+              font-weight: bold;
+          }
+      
+          /* Style for the heading */
+          h1 {
+              text-align: center;
+              font-size: 3em;  /* Dynamic, larger font size */
+              font-family: Arial, sans-serif;
+              color: #333;
+              margin-bottom: 30px;
+          }
+      
+          /* Style for the paragraph */
+          p {
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: left;
+              line-height: 1.6;
+              font-size: 1.1em;
+              color: #555;
+              font-family: cursive;
+          }
+      
+          /* Media Queries for Responsiveness */
+      
+          /* For medium devices like tablets (max-width: 768px) */
+          @media (max-width: 768px) {
+              .container {
+                  justify-content: center;
+              }
+      
+              .box {
+                  width: 150px;
+                  height: 150px;
+              }
+      
+              h1 {
+                  font-size: 2.5em;
+              }
+      
+              p {
+                  font-size: 1em;
+              }
+      
+              .box .overlay span {
+                  font-size: 18px;
+              }
+          }
+      
+          /* For smaller devices like mobile phones (max-width: 480px) */
+          @media (max-width: 480px) {
+              .container {
+                  justify-content: center;
+              }
+      
+              .box {
+                  width: 120px;
+                  height: 120px;
+              }
+      
+              h1 {
+                  font-size: 2em;
+              }
+      
+              p {
+                  font-size: 0.9em;
+              }
+      
+              .box .overlay span {
+                  font-size: 16px;
+              }
+          }
+      
+          /* For large screens (min-width: 1200px) */
+          @media (min-width: 1200px) {
+              .container {
+                  justify-content: flex-start;
+              }
+      
+              .box {
+                  width: 250px;
+                  height: 250px;
+              }
+      
+              h1 {
+                  font-size: 3.5em;
+              }
+      
+              .box .overlay span {
+                  font-size: 26px;
+              }
+          }
+      </style>
+      
+</head>
+<body>
+
+    <div>
+        <h1>WELCOME TO GOECHA LA</h1>
+        <p>Goecha La, located in the heart of North Sikkim, is a stunning high-altitude trekking destination that offers unparalleled views of the mighty Kanchenjunga, the third-highest peak in the world. Situated at an elevation of 4,940 meters (16,207 feet), this trek takes you through dense forests, alpine meadows, and tranquil lakes, immersing you in the untouched beauty of the Eastern Himalayas. Along the journey, trekkers are treated to breathtaking vistas of snow-capped peaks, including Jannu, Pandim, and Kabru. Goecha La is not only a paradise for nature lovers and adventure seekers but also a spiritual experience, offering a glimpse into the majestic grandeur of the mountains and the serene landscape that surrounds them.</p>
+    </div>
+
+
+          <body>
+            <style>
+                .container {
+                    display: flex;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                }
+            
+                .box {
+                    position: relative;
+                    width: 30%;
+                }
+            
+                .box img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px; /* Add this line to make the corners slightly rounded */
+                    transition: transform 0.3s ease-in-out;
+                }
+            
+                .box img:hover {
+                    transform: scale(1.05);
+                }
+            
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 10px; /* Make the overlay corners match the image */
+                }
+            </style>
+            <div class="container">
+                <div class="box">
+                    <img src="https://cvsqtgaxsa.cloudimg.io/https://images.prismic.io/indiahike/0e4a8e65-7dc7-40fe-b29e-7a8b0d9a2eac_GoechaLa+trek+-+Ashish+Bhatt+-+Sunlight+On+Kanchenjunga+Tip+-+indiahikes.jpg?&q=50&org_if_sml=1" alt="Image 1">
+                    <div class="overlay"></div>
+                </div>
+                <div class="box">
+                    <img src="https://trekthehimalayas.com/images/GoechalaTrek/GalleryDesktop/Summer/54451ee7-eea8-4cd5-a166-3da87bc258a5_Goechala-3.webp" alt="Image 2">
+                    <div class="overlay"></div>
+                </div>
+                <div class="box">
+                    <img src="https://dzq5y8juqplmb.cloudfront.net/media/img/reccy_images/13-132-00-03-01.webp" alt="Image 3">
+                    <div class="overlay"></div>
+                </div>
+                <div class="box">
+                    <img src="https://www.shutterstock.com/shutterstock/videos/3605135095/thumb/1.jpg?ip=x480" alt="Image 4">
+                    <div class="overlay"></div>
+                </div>
+                <div class="box">
+                    <img src="https://trekthehimalayas.com/images/GoechalaTrek/GalleryDesktop/Summer/d36fbaa6-ad95-4b51-8aff-2dc8d760bf22_Goechala-1.webp" alt="Image 5">
+                    <div class="overlay"></div>
+                </div>
+                <div class="box">
+                    <img src="https://cvsqtgaxsa.cloudimg.io/https://images.prismic.io/indiahike/ZfqAFg4qyfNhFzKA_PinBhabaPass_Diptarkagupta_BannerImages_Indiahikes-2.jpg?&q=50&org_if_sml=1" alt="Image 6">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+            
+            
+              </div>
+      
+                  </div>
+
+              </div>
+              

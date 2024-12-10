@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Places to Visit near Gangtok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+  
+    .topnav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+    }
+  
+    .topnav .left-menu {
+      display: flex;
+      align-items: center;
+    }
+  
+    .topnav .left-menu a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: larger;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+  
+    .topnav .left-menu a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .topnav .search {
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+  
+    .topnav .search input {
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+  
+    .topnav .logo {
+      display: flex;
+      align-items: center;
+    }
+  
+    .header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+  
+    .header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  
+    .header .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      font-family: cursive;
+    }
+  
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(155, 155, 90);
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+  
+    .menu-item {
+      margin: 0 15px;
+      text-align: center;
+    }
+  
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .menu-item p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #f3eeee;
+    }
+  
+    .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+  
+    .div {
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 12px;
+    }
+  
+    .destinations {
+      padding: 4rem 0;
+      text-align: center;
+      padding-top: 5px;
+    }
+  
+    .destinations h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  
+    .destination-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .destination {
+      flex: 0 1 30%;
+      margin-bottom: 12rem;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+  
+    .destination img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+  
+    .destination h3 {
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+  
+    .destination p {
+      padding: 0 1rem 1rem;
+    }
+  
+    .destination:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    .rating {
+      display: flex;
+      justify-content: left;
+      margin-top: 10px;
+    }
+  
+    .star {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+  
+    .star:hover,
+    .star.selected,
+    .star:hover~.star {
+      color: #f5c518;
+    }
+  
+    .btn1 {
+      padding-left: 6px;
+      padding-bottom: 6px;
+      border-radius: 8px;
+      border: none;
+    }
+  
+    .container1 {
+      background-color: #dde0dd;
+      height: 100%;
+      padding-top: 45px;
+      text-align: center;
+    }
+  
+    .no-underline {
+      text-decoration: none;
+    }
+  
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .menu-item {
+        margin: 10px 0;
+      }
+  
+      .destination-container {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .destination {
+        flex: 0 1 90%;
+        margin-bottom: 5rem;
+      }
+  
+      .header .title {
+        font-size: 35px;
+      }
+  
+      .destinations h2 {
+        font-size: 2rem;
+      }
+  
+      .topnav .left-menu a {
+        font-size: medium;
+      }
+  
+      .topnav .search input {
+        width: 80%;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .header .title {
+        font-size: 28px;
+      }
+  
+      .topnav .left-menu a {
+        font-size: small;
+        padding: 0.3rem 0.5rem;
+      }
+  
+      .menu-item img {
+        width: 50px;
+        height: 50px;
+      }
+  
+      .destination h3 {
+        font-size: 1.2rem;
+      }
+  
+      .destination p {
+        font-size: 14px;
+      }
+  
+      .destination-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+  </style>
+  
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+      <a href="share-experience">Experience</a>
+      <a href="about">About</a>
+      <a href="create-blog">Blogs</a>
+    </div>
+
+    <div class="logo">
+    <a href="/index">   <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a>
+    </div>
+  </div>
+
+  <div class="header">
+    <img src="https://bhartikumari.s3.ap-south-1.amazonaws.com/1723189938887_Untitleddesign%20%283%29.jpeg" alt="Header Image">
+     <div class="title">Best Places to Visit in Soreng</div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-item">
+      <a href="Sai-Mandir"><img src="https://www.hillscenic.co.in/images/p-destination/west/daramdin.jpg" alt="Best Selling"> </a>
+      <p style="font-family: cursive;">Sai Mandir </p>
+    </div>
+    <div class="menu-item">
+    <a href="Barsey-Rhododendron"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTz7iYnLxMRl8khd1hABfavbEmkdUIZXrOix8CcrwyZhyx6fbI9Y3B68xRzq432n6AS68&usqp=CAU"
+        alt="Popular Group"> </a>
+      <p style="font-family: cursive;">Barsey Rhododendron </p>
+    </div>
+    <div class="menu-item">
+      <a href="Soreng-Viewpoint"><img src="data:image/jpeg;base64,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" alt="Best Sellers">
+    </a>  <p style="font-family: cursive;">Soreng Viewpoint</p>
+    </div>
+    <div class="menu-item">
+      <a href="ramidham"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaCS1scubGaNqrtjU1h3X_zY4CVbo-xJJRvg&s"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Ramidham</p>
+    </div>
+    
+  </div>
+  <div class="div">
+    <h2 style="text-align: center; padding-top: 41px; font-size: 40px; font-family: cursive;"> About us </h2>
+    <P style="font-family: roboto;text-align: center;font-size: larger;">Soreng, a picturesque district in Sikkim, is a haven for nature lovers and adventure enthusiasts. Its known for its lush green landscapes, rolling hills, and serene ambiance, this region offers breathtaking views of the Himalayas, including the majestic Kanchenjunga. Soreng is famous for its organic farming practices and vibrant cultural heritage, making it a perfect destination for eco-tourism. Visitors can explore tranquil villages, hike through scenic trails, and immerse themselves in the local traditions and hospitality. With its unspoiled beauty and peaceful surroundings, Soreng promises a refreshing escape from the hustle and bustle of city life.
+    </P>
+  </div>
+  <h4 style="padding: 50px; text-align: center; font-size: 40px; font-family: cursive;"> Hotels and Stays in Soreng</h4>
+  <div class="destination-container">
+    <div class="destination" data-aos="fade-up">
+    
+
+        <img style="height: 60%;" src="https://lh5.googleusercontent.com/p/AF1QipMSFYzbQHFgpnNjHWAs_-rRx6ctxiJWAdHU2A5S=w513-h240-k-no">
+      </a>
+      <h3 style="font-family: cursive;">Dzoomlyang Homestay</h3>
+      <p style="font-family: roboto;">"At Dzoomlyang Homestay, find tranquility in nature's embrace, where every guest is family."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+     
+        <img  style="height: 60%;" src ="https://homestayssikkim.com/wp-content/uploads/2022/07/Homestays-Sikkim-5-62.jpg">
+      <h3 style="font-family: cursive;">  Eshab Homestay </h3>
+      <p style="font-family: roboto;">"Embrace the warmth of Sikkim and the beauty of nature at Eshab Homestay."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img style="height: 60%;"
+          src="https://lh5.googleusercontent.com/p/AF1QipPRXHO6zrsOvLj17g605_cy5QJsclO4HFzE6Jol=w408-h544-k-no">
+      </a>
+      <h3 style="font-family: cursive;">
+        The Red Chilly</h3>
+      <p style="font-family: roboto;">"Spice up your senses with the bold flavors of Sikkim at The Red Chilly."</p>
+      
+
+    </div>
+   
+    </div>
+
+    
+</body>
+
+</html>
+

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Places to Visit near Gangtok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .topnav {
+      display: flex;
+      justify-content: center;
+      /* Centering the navigation */
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+    }
+
+    .topnav .left-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .topnav .left-menu a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: larger;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .topnav .left-menu a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav .search {
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+
+    .topnav .search input {
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .topnav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+
+
+    .header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .header .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      font-weight: bold;
+      font-family: cursive;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: #687a75;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .menu-item {
+      margin: 0 15px;
+      text-align: center;
+    }
+
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #f3eeee;
+    }
+    .menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover img {
+  transform: scale(1.1);
+}
+    .div {
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 12px;
+    }
+
+    
+   
+
+   
+    .destinations {
+      padding: 4rem 0;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .destinations h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .destination-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .destination {
+      flex: 0 1 30%;
+      margin-bottom: 12rem;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .destination img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .destination h3 {
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+
+    .destination p {
+      padding: 0 1rem 1rem;
+    }
+
+    .destination:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .rating {
+      display: flex;
+      justify-content: left;
+      margin-top: 10px;
+    }
+
+    .star {
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .star:hover,
+    .star.selected,
+    .star:hover~.star {
+      color: #f5c518;
+    }
+
+    .btn1 {
+
+      padding-left: 6px;
+      padding-bottom: 6px;
+      border-radius: 8px;
+      border: none;
+
+    }
+
+.container1{
+ background-color: #dde0dd;
+ height: 100%;
+ padding-top: 45px;
+ text-align: center;
+
+
+  }
+  .no-underline {
+  text-decoration: none;
+}
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header .title {
+    font-size: 35px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination {
+    flex: 0 1 80%;
+    margin-bottom: 2rem;
+  }
+
+  .menu-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header img {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .topnav .search input {
+    width: 100%;
+  }
+
+  .header .title {
+    font-size: 30px;
+  }
+
+  .destination h3 {
+    font-size: 1.2rem;
+  }
+
+  .destination p {
+    font-size: 0.9rem;
+  }
+
+  .menu-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-item p {
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+      <a href="share-experience">Experience</a>
+      <a href="about">About</a>
+      <a href="create-blog">Blogs</a>
+    </div>
+
+    <div class="logo">
+    <a href="/index">  <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a>
+    </div>
+  </div>
+
+  <div class="header">
+    <img src="https://backpackersunited.in/_next/image?url=https%3A%2F%2Fbpu-images-v1.s3.eu-north-1.amazonaws.com%2Fuploads%2F1721843631305_5e3d0d7d89a9d-Tsomgo_Lake_Attractions.jpg&w=3840&q=75" alt="Header Image">
+
+     <div class="title">Best Places to Visit  in East Sikkim</div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-item">
+      <a href="/hanuman-tok"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Hanuman_Tok_Temple_Complex_in_Gangtok_District%2C_East_Sikkim_05.jpg/800px-Hanuman_Tok_Temple_Complex_in_Gangtok_District%2C_East_Sikkim_05.jpg" alt="Best Selling"> </a>
+      <p style="font-family: cursive;">Hanuman Tok</p>
+    </div>
+    <div class="menu-item">
+    <a href="/banjhakri-waterfalls"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/3f/73/30/banjhakri-falls.jpg?w=500&h=400&s=1"
+        alt="Popular Group"> </a>
+      <p style="font-family: cursive;">Banjhakri water falls</p>
+    </div>
+    <div class="menu-item">
+      <a href="/Nathula-Pass"><img src="https://travelnthrill.com/wp-content/uploads/2019/04/Nathula-Pass.jpg" alt="Best Sellers">
+     </a> <p style="font-family: cursive;">Nathula Pass</p>
+    </div>
+    <div class="menu-item">
+     <a href="/Gangtok-Ropeway"> <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/85/a9/bf/caption.jpg?w=300&h=300&s=1"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Gangtok Ropeway</p>
+    </div>
+    <div class="menu-item">
+      <a href="/Tsomgo-lake"><img
+        src="https://www.esikkimtourism.in/wp-content/uploads/2019/04/tsomgosptmbr.jpg"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Tsomgo lake </p>
+    </div>
+    <div class="menu-item">
+     <a href="MG-Marg"> <img
+        src="https://www.exoticmiles.com/wp-content/uploads/2020/06/m-g-road.jpg"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">MG marg </p>
+    </div>
+  </div>
+  <div class="div">
+    <h2 style="text-align: center; padding-top: 36px; font-size: 40px;font-family: cursive;"> About us </h2>
+    <P style="text-align: center;font-family: roboto;font-size: larger;">Gangtok, the capital city of Sikkim located in the East District, is a vibrant blend of natural beauty, cultural heritage, and urban charm. Perched on the slopes of the Himalayas at an altitude of about 5,410 feet, it offers breathtaking views of the majestic Kanchenjunga, the third-highest peak in the world. Known for its clean streets, scenic landscapes, and welcoming ambiance, Gangtok attracts tourists to popular spots like Tsomgo Lake, Rumtek Monastery, and the Enchey Monastery. The city is also a gateway to various adventure activities like trekking, river rafting, and paragliding, making it an ideal destination for thrill-seekers and nature enthusiasts alike. Rich in Buddhist culture, with a mix of traditional and modern influences, Gangtok is a unique and memorable destination that showcases the essence of Sikkim.
+    </P>
+  </div>
+  <h4 style="padding: 30px; text-align: center; font-size: 40px;font-family: cursive;"> Hotels and Stays in Gangtok</h4>
+  <div class="destination-container">
+    <div class="destination" data-aos="fade-up">
+      
+
+        <img style="height: 60%;" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/21/1a/52/exterior-view.jpg?w=300&h=300&s=1">
+      </a>
+      <h3 style="font-family: cursive;">May Fair Spa Resort</h3>
+      <p style="font-family: roboto;">"Mayfair Spa Resort in East Sikkim offers a luxurious retreat amidst the serene Himalayas, blending elegance with tranquility for an unforgettable escape."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img  style="height: 60%;" src ="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/50/98/e0/lemon-tree-hotel-gangtok.jpg?w=300&h=300&s=1"> 
+      </a>
+      <h3 style="font-family: cursive;">  Lemon Tree Hotel  </h3>
+      <p style="font-family: roboto;">"Lemon Tree Hotel Gangtok offers a refreshing blend of comfort and scenic beauty in the heart of the Himalayas."</p>
+   
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img style="height: 60%;"
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/6c/9f/95/the-fern-denzong-hotel.jpg?w=300&h=300&s=1">
+      </a>
+      <h3 style="font-family: cursive;">
+        The Fern Denzong </h3>
+      <p style="font-family: roboto;">"The Fern Denzong Hotel in Gangtok offers a tranquil retreat with stunning views, blending luxury and nature seamlessly."</p>
+     
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/30/3d/7f/caption.jpg?w=600&h=-1&s=1">
+      </a>
+      <h3 style="font-family: cursive;">
+       Zip by Spree Hotel</h3>
+      <p style="font-family: roboto;">"Zip by Spree Hotels in Gangtok offers a modern, comfortable stay with a vibrant atmosphere and stunning mountain views."</p>
+      
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+     
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/ef/38/7a/yashshree-sikkim-blossom.jpg?w=600&h=-1&s=1">
+      </a>
+      <h3 style="font-family: cursive;">
+       Yashshree Sikkim Blossom</h3>
+      <p style="font-family: roboto;">"Nestled in the heart of Gangtok, Yashshree Sikkim Blossom offers a tranquil retreat with stunning views of the Kanchenjunga Range, blending modern amenities with warm Sikkimese hospitality."​</p>
+      
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+   
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/46/b6/ff/treenz-hotels.jpg?w=600&h=-1&s=1">
+      </a>
+      <h3 style="font-family: cursive;">
+      Treenz Hotel</h3>
+      <p style="font-family: roboto;">"Treenz Hotel in Gangtok offers a luxurious stay with spacious rooms, a wellness spa, and panoramic views of the mountains, perfect for both relaxation and business events."</p>
+      
+    </div>
+    </div>
+
+    
+    </div>
+
+</body>
+
+</html>

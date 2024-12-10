@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Barsey Rhododendron Sanctuary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+    <style>
+        /* Base styles remain the same */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .topnav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 0.5rem 1rem;
+      }
+      
+      .topnav .left-menu {
+        display: flex;
+        align-items: center;
+      }
+      
+      .topnav .left-menu a {
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-size: larger;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+      .topnav .left-menu a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .topnav .search {
+        margin-left: auto;
+        margin-right: 1rem;
+      }
+      
+      .topnav .search input {
+        padding: 0.5rem;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+      }
+      
+      .topnav .logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .header {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+      
+      .header img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      
+      .header .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        font-weight: bold;
+      }
+      
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        .topnav {
+          flex-direction: column;
+          padding: 1rem;
+        }
+      
+        .topnav .left-menu {
+          flex-direction: column;
+        }
+      
+        .topnav .left-menu a {
+          padding: 0.5rem 0;
+          font-size: medium;
+        }
+      
+        .topnav .search {
+          margin: 1rem 0 0;
+          width: 100%;
+          text-align: center;
+        }
+      
+        .topnav .search input {
+          width: 80%;
+        }
+      
+        .header .title {
+          font-size: 30px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .header img {
+          height: 200px;
+        }
+      
+        .header .title {
+          font-size: 24px;
+        }
+      
+        .topnav {
+          padding: 0.5rem;
+        }
+      
+        .topnav .search input {
+          width: 90%;
+        }
+      }
+      
+      
+        </style>
+      </head>
+      
+      <body>
+        <div class="topnav">
+          <div class="left-menu">
+            <a class="active"></a>
+            <a href="/share-experience">Experience</a>
+          
+            <a href="/about">About</a>
+            <a href="/create-blog">Blogs</a>
+          </div>
+          <div class="logo">
+              <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+      
+      
+            </div>
+          </div>
+
+
+
+
+
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: url('https://www.shutterstock.com/image-photo/versey-colorful-rhododendron-sanctuary-spring-260nw-775920280.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 40px;
+            color: #2c3e50;
+            font-family: cursive;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: black;
+            max-width: 800px;
+            margin: 30px auto;
+            font-family: cursive;
+        }
+
+        .gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: cursive;
+    flex-wrap: wrap;
+    margin-top: 40px; /* Reduced margin-top for a more upward position */
+    padding-top: 80px; /* Reduced padding-top for a more upward position */
+}
+
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+            padding-bottom: 100px;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .scroll-up {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-up.show {
+            display: block;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            section p {
+                font-size: 16px;
+            }
+
+            .gallery {
+                justify-content: center;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                max-width: 350px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 80px 10px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+                
+            }
+
+            section p {
+                font-size: 14px;
+            }
+
+            .gallery img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Barsey Rhododendron Sanctuary</h1>
+        <p>Discover the Beauty of the Rhododendrons</p>
+    </header>
+
+    <section>
+        <h2>About the Sanctuary</h2>
+        <p>The Barsey Rhododendron Sanctuary is one of the most famous wildlife sanctuaries located in the western part of Sikkim. Known for its abundant collection of Rhododendron trees, the sanctuary offers a panoramic view of the Kanchenjunga mountain range, making it a popular destination for trekkers and nature enthusiasts.The sanctuary is also home to diverse wildlife species, including the red panda, Himalayan black bear, and various bird species, making it a haven for wildlife enthusiasts. Visitors can enjoy a serene and peaceful atmosphere amidst towering trees, cascading waterfalls, and clear streams. The Barsey Rhododendron Sanctuary offers an exceptional blend of natural beauty, tranquility, and adventure, making it a must-visit destination for those seeking to connect with nature. Its location at a high altitude provides an unparalleled view of the snow-capped Kanchenjunga, the third-highest peak in the world, adding to the sanctuary’s charm</p>
+    </section>
+
+    <section>
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://blackyakexpeditions.com/wp-content/uploads/2017/01/Barsey-Rhododendron-Trek.jpg" alt="Rhododendron 1">
+            <img src="https://i.pinimg.com/736x/4b/66/16/4b6616755a1397a1d60de23cac9949fb.jpg" alt="Rhododendron 2">
+            <img src="https://www.setmytrip.in/wp-content/uploads/2023/11/Barsey-Camping.jpg" alt="Rhododendron 3">
+            <img src="https://lh6.googleusercontent.com/proxy/7Txq3Fhaf7--gRQXv0YVjiWUmcfuv2-3RhNco_LP6Sv9buWplXeQ5lHVRjLmtGnsKThtpNe967oIbSDpddiqiRLIArJVVMkaoAYQg63baBz0MA">
+            <img src="https://i.ytimg.com/vi/jiioQWo2q3w/maxresdefault.jpg">
+            <img src="https://roamingowls.com/wp-content/uploads/Barsey-Rhododendron-Sanctuary-white-flower.jpg">
+            <img src="https://maverickbird.com/wp-content/uploads/2021/02/19577389_2103775356306167_9173821819687479255_o-1-1024x700.jpg">
+            <img src="https://cf-img-a-in.tosshub.com/lingo/itne/images/story/202405/6637140164f3c-sikkim-barsey-rhododendron-sanctuary-blooms-into-springtime-wonderland-050712460-16x9.jpg?size=700:394">
+         </div>
+    </div>
+
+    </section>
+
+    
+
+    
+
+    <div class="scroll-up" id="scroll-up">
+        ↑
+    </div>
+
+    <script>
+        // Show scroll-up button when the user scrolls down
+        window.onscroll = function () {
+            var scrollUp = document.getElementById('scroll-up');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollUp.classList.add('show');
+            } else {
+                scrollUp.classList.remove('show');
+            }
+        };
+
+        // Scroll to top when button is clicked
+        document.getElementById('scroll-up').onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+
+</html>

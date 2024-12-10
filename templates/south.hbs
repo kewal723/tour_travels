@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Places to Visit near Gangtok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .topnav {
+      display: flex;
+      justify-content: center;
+      /* Centering the navigation */
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 0.5rem 1rem;
+    }
+
+    .topnav .left-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .topnav .left-menu a {
+      color: #333;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: larger;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .topnav .left-menu a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav .search {
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+
+    .topnav .search input {
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .topnav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+
+
+    .header {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .header img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .header .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 50px;
+      font-weight: bold;
+      color:white;
+      font-family: cursive;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(105, 104, 104);
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+    }
+
+    .menu-item {
+      margin: 0 15px;
+      text-align: center;
+    }
+
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-item p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #f3eeee;
+    }
+    .menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover img {
+  transform: scale(1.1);
+}
+    .div {
+      background-color: white;
+      padding-left: 10px;
+      padding-right: 12px;
+    }
+
+    
+   
+
+   
+    .destinations {
+      padding: 4rem 0;
+      text-align: center;
+      padding-top: 5px;
+    }
+
+    .destinations h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .destination-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .destination {
+      flex: 0 1 30%;
+      margin-bottom: 12rem;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .destination img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .destination h3 {
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+
+    .destination p {
+      padding: 0 1rem 1rem;
+    }
+
+    .destination:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+
+
+   
+
+    .btn1 {
+
+      padding-left: 6px;
+      padding-bottom: 6px;
+      border-radius: 8px;
+      border: none;
+
+    }
+
+.container1{
+ background-color: #dde0dd;
+ height: 100%;
+ padding-top: 45px;
+ text-align: center;
+
+
+  }
+  .no-underline {
+  text-decoration: none;
+}
+
+  /* Base styles (unchanged) */
+  /* Your existing CSS goes here... */
+
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    /* Medium screens */
+    .topnav .left-menu a {
+      font-size: medium;
+    }
+    .header img {
+      height: 250px;
+    }
+    .menu {
+      flex-direction: column;
+      padding: 10px;
+    }
+    .menu-item {
+      margin: 10px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Tablet screens */
+    .destination {
+      flex: 0 1 45%;
+      margin-bottom: 2rem;
+    }
+    .destination h3 {
+      font-size: 1.2rem;
+    }
+    .header .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    /* Small screens */
+    .topnav {
+      flex-direction: column;
+    }
+    .topnav .left-menu {
+      flex-direction: column;
+      width: 100%;
+    }
+    .menu {
+      flex-direction: column;
+      padding: 5px;
+    }
+    .menu-item img {
+      width: 50px;
+      height: 50px;
+    }
+    .header img {
+      height: 200px;
+    }
+    .header .title {
+      font-size: 1.8rem;
+    }
+    .destination {
+      flex: 0 1 100%;
+      margin-bottom: 1.5rem;
+    }
+    .container1 {
+      padding-top: 20px;
+    }
+  }
+</style>
+
+
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+      <a href="share-experience">Experience</a>
+      <a href="about">About</a>
+      <a href="create-blog">Blogs</a>
+    </div>
+
+    <div class="logo">
+    <a href="/index">  <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a>
+    </div>
+  </div>
+
+  <div class="header">
+    <img src="https://www.esikkimtourism.in/wp-content/uploads/2019/04/3rd-image.jpg" alt="Header Image">
+   
+    <div class="title">Best Places to Visit in South Sikkim</div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-item">
+      <a href="Buddha-Park"><img src="https://www.shutterstock.com/image-photo/beautiful-huge-statue-lord-buddha-600nw-647882221.jpg" alt="Best Selling"> </a>
+      <p style="font-family: cursive;">Buddha Park</p>
+    </div>
+    <div class="menu-item">
+    <a href="Char-Dham"><img src="https://i.ytimg.com/vi/QousSDPV1ms/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJJn2g0fdcsfHSmCyE2IJpVHlALw"
+        alt="Popular Group"> </a>
+      <p style="font-family: cursive;">Char Dham</p>
+    </div>
+    <div class="menu-item">
+      <a href="Tarey-Bhir"><img src="https://sikkimtourism.org/wp-content/uploads/2022/04/TAREY-BHIR-1-700x500.jpg" alt="Best Sellers">
+      </a><p style="font-family: cursive;">Tarey Bhir</p>
+    </div>
+    <div class="menu-item">
+      <a href="Rose-Garden"><img src="https://bookshaadi.com/media/images_boards/big/66859c42e16eb.jpg"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Rose Garden</p>
+    </div>
+    <div class="menu-item">
+      <a href="Samdruptse-Hill"><img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnA8XtD_WCFRAVHKvk58YgjI75c7vJqTjBufSkEnzpONt9izVZnfJR7U3-enWa4linMDQ&usqp=CAU"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Samdruptse Hill </p>
+    </div>
+    <div class="menu-item">
+     <a href="Temi-Tea-Garden"> <img
+        src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/12/0e504bbf8c5d26710c015fcf6d1667c9_1000x1000.jpeg"
+        alt="Tours"></a>
+      <p style="font-family: cursive;">Temi Tea Garden</p>
+    </div>
+  </div>
+  <div class="div">
+    <h2 style="text-align: center; padding-top: 20px; font-size:40px;font-family: cursive;"> About us </h2>
+    <P style="font-family: ROBOTO;font-size: larger;text-align: center;">South Sikkim, located in the southern part of the Indian state of Sikkim, is a captivating region known for its natural beauty, rich culture, and spiritual significance. The district is home to lush green landscapes, rolling hills, and picturesque valleys, offering stunning views of the mighty Kanchenjunga and other Himalayan peaks. It boasts several popular tourist destinations like Namchi, home to the famous Samdruptse Hill and the large statue of Guru Padmasambhava, and the Temi Tea Garden, renowned for its organic tea production. South Sikkim also has various monasteries, trekking trails, and vibrant local communities that preserve the rich cultural heritage of the region. The district’s serene environment and blend of nature and spirituality make it a must-visit destination for travelers seeking peace and beauty in the lap of the mountains.
+
+
+
+    </P>
+  </div>
+  <h4 style="padding: 20px; text-align: center; font-size: 40px; font-family: cursive;"> Hotels and Stays in South</h4>
+  <div class="destination-container">
+    <div class="destination" data-aos="fade-up">
+      
+
+        <img style="height: 60%;" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/605377375.jpg?k=a2c42a517c1936d6af7a2194c2810faaad0c5016e7f3014be78226a36501f6c4&o=&hp=1">
+      </a>
+      <h3 style="font-family: cursive;">Nolina Boutique Homestay</h3>
+      <p style="font-family: roboto;">"Nolina Boutique Homestay in South Sikkim offers a serene escape where nature's beauty meets warm hospitality, providing an unforgettable retreat for those seeking peace and comfort in the heart of the Himalayas."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+
+        <img  style="height: 60%;" src ="https://drivetonortheast.com/uploads/hotels/gallery/HTL-1742-6625/photo-1423-7134.jpg"> 
+      </a>
+      <h3 style="font-family: cursive;">Sherpa Homestay Kewzing </h3>
+      <p style="font-family: roboto;">"Sherpa Homestay in Kewzing offers a warm and authentic experience, where guests can immerse themselves in local culture while enjoying the serene beauty of South Sikkim."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img style="height: 60%;"
+          src="https://homestayssikkim.com/wp-content/uploads/2022/07/Homestays-Sikkim-4-22.jpg">
+      </a>
+      <h3 style="font-family: cursive;">
+        Selep Homestay</h3>
+      <p style="font-family: roboto;">"Selep Homestay in South Sikkim provides a cozy and authentic stay, offering a perfect blend of local hospitality and stunning views of the surrounding mountains and landscapes."
+
+
+      </p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img
+          src="https://content3.jdmagicbox.com/comp/namchi/t6/9999p3595.3595.220608232814.y5t6/catalogue/pallmer-homestay-damthang-namchi-home-stay-zrjbr5tt9u.jpg">
+      </a>
+      <h3 style="font-family: cursive;">
+        Pallmer Homestay</h3>
+      <p style="font-family: roboto;">"Pallmer Homestay offers a charming and peaceful retreat in South Sikkim, where guests can experience warm hospitality and scenic mountain views in a serene setting."</p>
+     
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img
+          src="https://lh5.googleusercontent.com/p/AF1QipPARF7VK_Dord-GQiYlCU2aVOtvsCRz49zGkLRo=w408-h306-k-no">
+      </a>
+      <h3 style="font-family: cursive;">
+        Sarika Homestay </h3>
+      <p style="font-family: roboto;">"Sarika Homestay in South Sikkim provides a cozy haven with warm hospitality, inviting guests to relax amidst breathtaking landscapes and enjoy an authentic local experience."</p>
+      
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+  
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ57k2ShvZGWlAz90Za8IWQpk54zsexvAIP7Q&s">
+      </a>
+      <h3 style="font-family: cursive;">
+        Hotel Kanaka Residency</h3>
+      <p style="font-family: robotos;">"Kanaka Residency offers a serene escape in South Sikkim, combining comfort with beautiful mountain views and an authentic taste of local culture."</p>
+      
+
+    </div>
+    </div>
+
+    
+    </div>
+
+    
+</body>
+
+</html>
+

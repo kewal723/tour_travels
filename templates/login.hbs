@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            background: url('https://wallpapercave.com/wp/wp4069431.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.63);
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(80, 4, 202, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 300px; /* Ensures a maximum width for larger screens */
+            margin: 20px;
+        }
+
+        .login-container:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+        }
+
+        button {
+            padding: 14px;
+            margin: 15px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .signup-link {
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 20px;
+                width: 80%;
+                max-width: 350px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+                width: 90%;
+                max-width: 300px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+
+        /* For very small screens (mobile) */
+        @media (max-width: 320px) {
+            .login-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 13px;
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Log in</h2>
+
+        <!-- Form for user login -->
+        <form action="/login" method="POST">
+            <input type="text" name="name" placeholder="Enter name" required>
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="/signup" class="signup-link">Sign up here</a></p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 YourWebsite. All Rights Reserved.
+    </div>
+
+</body>
+</html>

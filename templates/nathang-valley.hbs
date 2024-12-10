@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+        }
+    
+        .topnav {
+          display: flex;
+          justify-content: center;
+          /* Centering the navigation */
+          align-items: center;
+          background-color: #f5f5f5;
+          padding: 0.5rem 1rem;
+        }
+    
+        .topnav .left-menu {
+          display: flex;
+          align-items: center;
+        }
+    
+        .topnav .left-menu a {
+          color: #333;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          font-size: larger;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .topnav .left-menu a:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .topnav .search {
+          margin-left: auto;
+          margin-right: 1rem;
+        }
+    
+        .topnav .search input {
+          padding: 0.5rem;
+          border-radius: 20px;
+          border: 1px solid #ccc;
+        }
+    
+        .topnav .logo {
+          display: flex;
+          align-items: center;
+        }
+    
+    
+    
+        .header {
+          position: relative;
+          text-align: center;
+          color: white;
+        }
+    
+        .header img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+    
+        .header .title {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 50px;
+          font-weight: bold;
+        }
+    
+        .menu {
+          display: flex;
+          justify-content: center;
+          background-color: rgb(185, 181, 181);
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .menu-item {
+          margin: 0 15px;
+          text-align: center;
+        }
+    
+        .menu-item img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .menu-item p {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #f3eeee;
+        }
+        .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+        .div {
+          background-color: white;
+          padding-left: 10px;
+          padding-right: 12px;
+        }
+    
+        
+       
+    
+       
+        .destinations {
+          padding: 4rem 0;
+          text-align: center;
+          padding-top: 5px;
+        }
+    
+        .destinations h2 {
+          font-size: 2.5rem;
+          margin-bottom: 2rem;
+        }
+    
+        .destination-container {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+    
+        .destination {
+          flex: 0 1 30%;
+          margin-bottom: 12rem;
+          text-align: left;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        .destination img {
+          width: 100%;
+          height: auto;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+    
+        .destination h3 {
+          font-size: 1.5rem;
+          margin: 1rem;
+        }
+    
+        .destination p {
+          padding: 0 1rem 1rem;
+        }
+    
+        .destination:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .rating {
+          display: flex;
+          justify-content: left;
+          margin-top: 10px;
+        }
+    
+        .star {
+          font-size: 24px;
+          color: #ccc;
+          cursor: pointer;
+          transition: color 0.3s;
+        }
+    
+        .star:hover,
+        .star.selected,
+        .star:hover~.star {
+          color: #f5c518;
+        }
+    
+        .btn1 {
+    
+          padding-left: 6px;
+          padding-bottom: 6px;
+          border-radius: 8px;
+          border: none;
+    
+        }
+    
+    .container1{
+     background-color: #dde0dd;
+     height: 100%;
+     padding-top: 45px;
+     text-align: center;
+    
+    
+      }
+      .no-underline {
+      text-decoration: none;
+    }
+    
+      </style>
+    </head>
+    
+    <body>
+      <div class="topnav">
+        <div class="left-menu">
+          <a class="active"></a>
+          <a href="/share-experience">Experience</a>
+      
+          <a href="/about">About</a>
+          <a href="/create-blog">Blogs</a>
+        </div>
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+
+
+          </div>
+        </div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color:transparent;
+            margin: 5% auto;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation: animatezoom 0.6s;
+        }
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        .container {
+            padding: 16px;
+            
+        }
+        .container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .container input[type="text"], .container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .container button {
+            background-color: #28a745;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+        .container .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 4px;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+            
+        }
+    </style>
+</head>
+<body>
+
+            
+            </body>
+            </html>
+            
+          </nav>
+        </div>
+       <div>
+        <div class="slideshow-container">
+            
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://static2.tripoto.com/media/filter/tst/img/1240564/TripDocument/1668950454_nathang.jpg" alt="Slide 1" style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/96/a1/3c/nathang-valley.jpg?w=1200&h=-1&s=1" alt="Slide 2" style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://static2.tripoto.com/media/filter/tst/img/1240564/TripDocument/1668953336_nathang_v.jpg.webp" alt="Slide 3"  style="width:1500px; height:700px;"/>
+            
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+        </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          
+          <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 1000); // Change image every 1 seconds
+            }
+            </script>
+         <style>
+          .container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              margin: 20px auto;
+              max-width: 2000px;
+          }
+      
+          .box {
+              width: 200px;
+              height: 200px;
+              overflow: hidden;
+              position: relative;
+              margin: 10px;
+          }
+      
+          .box img {
+              width: 100%;
+              height: 100%;
+              transition: transform 0.5s ease;
+          }
+      
+          .box:hover img {
+              transform: scale(1.1);
+          }
+      
+          .box .overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+          }
+      
+          .box:hover .overlay {
+              opacity: 1;
+          }
+      
+          .box .overlay span {
+              color: #fff;
+              font-size: 24px;
+              font-weight: bold;
+          }
+      
+          /* Style for the heading */
+          h1 {
+              text-align: center;
+              font-size: 3em;  /* Dynamic, larger font size */
+              font-family: Arial, sans-serif;
+              color: #333;
+              margin-bottom: 30px;
+          }
+      
+          /* Style for the paragraph */
+          p {
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: left;
+              line-height: 1.6;
+              font-size: 1.1em;
+              color: #555;
+              font-family: cursive;
+          }
+      
+          /* Media Queries for Responsiveness */
+      
+          /* For medium devices like tablets (max-width: 768px) */
+          @media (max-width: 768px) {
+              .container {
+                  justify-content: center;
+              }
+      
+              .box {
+                  width: 150px;
+                  height: 150px;
+              }
+      
+              h1 {
+                  font-size: 2.5em;
+              }
+      
+              p {
+                  font-size: 1em;
+              }
+      
+              .box .overlay span {
+                  font-size: 18px;
+              }
+          }
+      
+          /* For smaller devices like mobile phones (max-width: 480px) */
+          @media (max-width: 480px) {
+              .container {
+                  justify-content: center;
+              }
+      
+              .box {
+                  width: 120px;
+                  height: 120px;
+              }
+      
+              h1 {
+                  font-size: 2em;
+              }
+      
+              p {
+                  font-size: 0.9em;
+              }
+      
+              .box .overlay span {
+                  font-size: 16px;
+              }
+          }
+      
+          /* For large screens (min-width: 1200px) */
+          @media (min-width: 1200px) {
+              .container {
+                  justify-content: flex-start;
+              }
+      
+              .box {
+                  width: 250px;
+                  height: 250px;
+              }
+      
+              h1 {
+                  font-size: 3.5em;
+              }
+      
+              .box .overlay span {
+                  font-size: 26px;
+              }
+          }
+      </style>
+      
+</head>
+<body>
+
+    <div>
+        <h1>WELCOME TO NATHANG VALLEY</h1>
+        <p>Nathang Valley is a hidden gem nestled at an altitude of around 13,500 feet. Known for its breathtaking views of the snow-capped Eastern Himalayas, including the towering Kanchenjunga, the valley offers a tranquil escape surrounded by lush alpine meadows, rolling hills, and clear blue skies. It is often referred to as the "Scotland of Sikkim" due to its picturesque landscape, which transforms into a winter wonderland with snow during the colder months. The valley is also rich in historical significance, lying near the Indo-China border. With its serene atmosphere, scenic beauty, and proximity to trekking routes, Nathang Valley is a must-visit destination for nature lovers and adventure seekers.</p>
+    </div>
+
+
+          <body>
+          
+          <div class="container">
+              <div class="box">
+                  <img src="https://www.rucksack.co.in/temp/5230032313.jpg" alt="Image 1">
+                  <div class="overlay">
+                     
+                  </div>
+              </div>
+              <div class="box">
+                  <img src="https://northbengalguide.com/images/sikkim/main-nathang-valley-640.jpg" alt="Image 2">
+                  <div class="overlay">
+                      
+                  </div>
+              </div>
+              <div class="box">
+                  <img src="https://www.riddhimart.com/DestImages/Nathang-Snow-capped-Valley-.jpg" alt="Image 3">
+                  <div class="overlay">
+                      
+                  </div>
+              </div>
+              <div class="box">
+                  <img src="https://tripsaround.in/wp-content/uploads/2014/04/Nathang-Valley.jpg" alt="Image 4"/>
+                  <div class="overlay">
+                     
+                  </div>
+              </div>
+              <div class="box">
+                  <img src="https://alafiia.com/wp-content/uploads/2023/03/Nathang-9.webp" alt="Image 5">
+                  <div class="overlay">
+                      
+                  </div>
+              </div>
+      
+                  </div>
+
+              </div>
+              

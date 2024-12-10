@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<style>
+  /* Base styles remain the same */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+
+.topnav .left-menu {
+  display: flex;
+  align-items: center;
+}
+
+.topnav .left-menu a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: larger;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topnav .left-menu a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topnav .search {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.topnav .search input {
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.topnav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.header img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.header .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .topnav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .topnav .left-menu {
+    flex-direction: column;
+  }
+
+  .topnav .left-menu a {
+    padding: 0.5rem 0;
+    font-size: medium;
+  }
+
+  .topnav .search {
+    margin: 1rem 0 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topnav .search input {
+    width: 80%;
+  }
+
+  .header .title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header img {
+    height: 200px;
+  }
+
+  .header .title {
+    font-size: 24px;
+  }
+
+  .topnav {
+    padding: 0.5rem;
+  }
+
+  .topnav .search input {
+    width: 90%;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+      <a href="/share-experience">Experience</a>
+         <a href="about">About</a>
+      <a href="/create-blog">Blogs</a>
+    </div>
+    <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+
+
+      </div>
+    </div>
+<body>
+   
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h1>WELCOME TO KHECHEOPALRI LAKE</h1>
+                <p class="animate__animated animate__fadeInUp">Khecheopalri Lake, located in West Sikkim, India, is a sacred and serene body of water revered by both Buddhists and Hindus. Known as the "wish-fulfilling lake," it lies nestled amid dense forests and rolling hills at an altitude of about 1,700 meters. The lake is believed to be blessed, with a unique legend stating that birds keep the lake’s surface free of leaves, preserving its tranquil clarity. Surrounded by fluttering prayer flags, the lake attracts pilgrims and visitors from around the world, who come to seek blessings and offer prayers. Its peaceful atmosphere, set against the lush green of the Himalayan landscape, makes Khecheopalri Lake not only a place of worship but also a popular spot for nature lovers and spiritual seekers alike.</p>
+            </div>
+            <div class="image-container animate__animated animate__fadeInRight">
+               
+                <img src="https://www.citybit.in/wp-content/uploads/2023/09/Khecheopalri-Lake.jpg" style width="500px"height="300px"Travel Image">
+              <style>
+               body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.about-section {
+    padding: 60px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content {
+    max-width: 600px;
+    font-family: cursive;
+    padding-right: 100px;
+    text-align: left;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: large;
+    color: #ebe5e5;
+}
+
+/* Media Query for devices with a max width of 768px */
+@media only screen and (max-width: 768px) {
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 12px;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-section {
+        padding: 40px;
+    }
+}
+
+/* Media Query for devices with a max width of 480px (Mobile devices) */
+@media only screen and (max-width: 480px) {
+    .navbar a {
+        padding: 10px;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .container {
+        gap: 5px;
+    }
+
+    .about-content {
+        font-family: sans-serif;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    a {
+        font-size: medium;
+    }
+}
+
+                </style>
+            </div>
+
+        </div>
+    </section>
+    <style>
+      /* Gallery Container */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+      }
+  
+      /* Gallery Images */
+      .gallery img {
+        
+        width: 250px;
+        height: 200px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+  
+      /* Hover Effect */
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+  
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .gallery img {
+          max-width: 250px; /* Slightly smaller for tablets */
+        }
+      }
+  
+      @media (max-width: 480px) {
+        .gallery img {
+          max-width: 90%; /* Full width for smaller mobile screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <!-- Responsive Image Gallery -->
+    <div class="gallery">
+      <img src="https://travelandhappiness.wordpress.com/wp-content/uploads/2021/07/khecheopalri-lake-sikkim.jpg?w=1024" alt="Khecheopalri Lake 1">
+      <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/12/f2f4a28da80540caf95624f7facca7b4_1000x1000.jpg" alt="Khecheopalri Lake 2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFy97YeJlXmTEWoXkhU_If4b7P1fwPeV4Ae7mHnoPe_g0GDenpcefWUjGtOrhaPZY3EE&usqp=CAU" alt="Khecheopalri Lake 3">
+      <img src="https://static.toiimg.com/thumb/110253628/Khecheopalri-Lake-in-Sikkim.jpg?width=636&height=358&resize=4" alt="Khecheopalri Lake 4">
+      <img src="https://www.adotrip.com/public/images/areas/large_thumb/5fe085f44e97e-Khecheopalri_Lake_Package_tour.jpg" alt="Khecheopalri Lake 4">
+    </div>
+  
+    
+    <style>
+        /* Adding hover effect */
+        div img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+    </style>
+    
+    
+</html>

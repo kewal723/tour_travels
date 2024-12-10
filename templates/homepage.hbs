@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #bdc4bd;
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            font-size: 1rem;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/03/what-is-a-blog-1.png') no-repeat center center/cover;
+            color: white;
+        }
+
+        .intro h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        button.back-home {
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button.back-home:hover {
+            background-color: #666;
+        }
+
+        .blog-section {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0;
+        }
+
+        .blog-item {
+            background-color: #fafafa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .blog-item p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .blog-image {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .intro h2 {
+                font-size: 2.5rem;
+            }
+
+            .intro p {
+                font-size: 1.2rem;
+            }
+
+            .blog-section h2 {
+                font-size: 2rem;
+            }
+
+            .blog-item h3 {
+                font-size: 1.4rem;
+            }
+
+            .blog-item p {
+                font-size: 1rem;
+            }
+
+            .intro {
+                padding: 3rem 1rem;
+            }
+
+            .back-home {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro h2 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .back-home {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section id="home" class="intro">
+        <h2>Thank You for sharing blogs </h2>
+       
+      <a href="/index-new">  <button class="back-home" onclick="window.location.href='#home'">Back to Home</button></a>
+    </section>
+
+    <section id="blogs" class="blog-section">
+        <h2>Uploaded Blogs</h2>
+        {{#if blogs}}
+            <ul class="blog-list">
+                {{#each blogs}}
+                    <li class="blog-item">
+                        <h3>{{this.title}}</h3>
+                        <p>{{this.content}}</p>
+                        {{#if this.image}}
+                            <img src="/uploads/{{this.image}}" alt="Blog Image" class="blog-image">
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No blogs uploaded yet.</p>
+        {{/if}}
+    </section>
+
+    <footer>
+        <p>© 2024 TravelExplorer | All rights reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const blogItems = document.querySelectorAll('.blog-item');
+            blogItems.forEach(item => {
+                item.addEventListener('mouseover', function() {
+                    item.style.transform = 'scale(1.05)';
+                });
+                item.addEventListener('mouseout', function() {
+                    item.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

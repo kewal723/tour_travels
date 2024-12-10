@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour and Travel Agency</title>
+    <link rel="stylesheet" href="./css/styles_new.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+</head>
+
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.topnav {
+    display: flex;
+    justify-content: center; /* Centering the navigation */
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0.5rem 1rem;
+}
+
+.topnav .left-menu {
+    display: flex;
+    align-items: center;
+}
+
+.topnav .left-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: larger;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topnav .left-menu a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.topnav .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Header Section */
+header {
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?cs=srgb&dl=pexels-freestockpro-3278215.jpg&fm=jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.header-content {
+    max-width: 800px;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Featured Destinations Section */
+.destinations {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.destinations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: cursive;
+}
+
+.destination-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.destination {
+    flex: 0 1 30%;
+    margin-bottom: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.destination h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-family: cursive;
+}
+
+.destination p {
+    padding: 0 1rem 1rem;
+    font-family: Roboto;
+    font-size: medium;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: cursive;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px lightblue;
+    font-family: cursive;
+}
+
+.contact form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact form input[type="text"],
+.contact form input[type="email"],
+.contact form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid green;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.contact form textarea {
+    resize: vertical;
+}
+
+/* Container for the search bar */
+.search-container {
+    position: relative;
+    margin-left: auto; /* Pushes the container to the right side */
+    margin-right: 1rem; /* Adds some space from the right edge */
+    display: flex;
+    align-items: center; /* Centers input vertically in the nav bar */
+}
+
+/* Styling for the search input */
+#search-input {
+    padding: 8px 12px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: width 0.3s ease;
+}
+
+#search-input:focus {
+    width: 250px; /* Expands width on focus */
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styling for search results dropdown */
+#search-results {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px; /* Position below the input box */
+    right: 0; /* Align to the right edge of input */
+    width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Each individual result item */
+.result-item {
+    padding: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Add these styles for better visibility of search results */
+.results {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 200px; /* adjust width as needed */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.result-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #eee;
+}
+
+.contact form button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #eee9e9;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .topnav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .topnav .left-menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .topnav .search {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+
+    .destination {
+        flex: 0 1 100%;
+    }
+}
+
+</style>
+<body>
+   
+    <nav class="topnav">
+        <div class="left-menu">
+            <a class="active" href="/index"> Back to Home</a>
+        </div>
+        <!--search bar-->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search here..." onkeyup="searchFunction()">
+            <div id="search-results" class="results"></div>
+          </div>
+        <div class="logo">
+          <a href="/index">  
+            <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40">
+          </a>  
+        </div>
+    </nav>
+    
+    <header>
+        <div class="header-content">
+            <h1>Discover Your Dream Destinations</h1>
+            <p>Plan your next adventure with us and explore the world's wonders.</p>
+            <a href="#destinations" class="btn">Explore Destinations</a>
+        </div>
+    </header>
+
+    <!-- Featured Destinations Section -->
+    <section id="destinations" class="destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destination-container">
+            <div class="destination" data-aos="fade-up">
+                <a href="/east"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/M.G._Marg%2C_Gangtok_01.jpg/640px-M.G._Marg%2C_Gangtok_01.jpg"style="width: 400px; height: 300px;"></a>
+                <h3>East</h3>
+                <p>Where the rising sun kisses the mighty mountains and the rivers whisper tales of serenity</p>
+            </div>
+            <div class="destination" data-aos="fade-up" data-aos-delay="200">
+                <a href="/west"> <img src="https://helpthetourists.in/destination/img/west-sikkim/pelling/pelling-1.webp"style="width: 400px; height: 300px;">
+              </a>
+                    <h3>West</h3>
+                <p>A land of untamed beauty, where nature's grandeur unfolds in every corner</p>
+            </div>
+            <div class="destination" data-aos="fade-up" data-aos-delay="400">
+                <a href="/north">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/Gurudongmar_Lake_in_May_20180206123558.jpg"style="width: 400px; height: 300px;" >
+                </a>
+                <h3>North</h3>
+                <p>The untouched wilderness of the north, where the snow-capped peaks meet the sky in perfect harmony</p>
+            </div>
+
+            <div class="destination" data-aos="fade-up" data-aos-delay="400">
+                <a href="/south"><img src="https://media.holidify.com/images/cmsuploads/compressed/Cherry_Resort_inside_Temi_Tea_Garden2C_Namchi2C_Sikkim_20240923182747.jpg"style="width: 400px; height: 300px;" >
+                </a><h3>South</h3>
+                <p>A paradise where lush green hills and vibrant culture coexist in peaceful rhythm</p>
+            </div>
+
+            <div class="destination" data-aos="fade-up" data-aos-delay="400">
+                <a href="/soreng" ><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCCA1RNhvY0G_S2gr659RRlZtTKfXwJikSrnp0ljDnEyxXgIQhhx27bH2_44p2pJ-R4G1NV6YskAR_mSQllbvsvJTH6Ms0y_xqZo2ebFz-ejKV6Tny-rsteKu1gaDrk7C4EKyOip1wBJ8L/s1600/SORENG.jpg"style="width: 400px; height: 300px;" >
+              </a>  <h3>Soreng</h3>
+                <p>Where the rolling hills of Soreng meet the horizon, offering a tranquil escape into nature’s embrace</p>
+            </div>
+
+            <div class="destination" data-aos="fade-up" data-aos-delay="400">
+                <a href ="/pakyong"><img src="https://media-cdn.tripadvisor.com/media/photo-s/17/ad/e7/97/dzuluk-or-zuluk-or-jhuluk.jpg"style="width: 400px; height: 300px;">
+                </a>  <h3>Pakyong</h3>
+                <p>Nestled in the heart of Sikkim, Pakyong is a serene haven for those seeking peace amidst the clouds.</p>
+            </div>
+
+        </div>
+    </section>
+    
+          <style>
+            /* Reset and base styling */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f4f8;
+                color: #333;
+                margin: 0;
+            }
+        
+            /* Slideshow Container */
+            .slideshow-container {
+                position: relative;
+                max-width: 100%;
+                height: 500px;
+                overflow: hidden;
+                margin: 50px auto;
+            }
+        
+            .slide {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 1s ease, transform 1s ease;
+            }
+        
+            .active-slide {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        
+            /* Navigation Buttons */
+            .prev, .next {
+                position: absolute;
+                top: 50%;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                z-index: 2;
+                transition: background-color 0.3s ease;
+            }
+        
+            .prev:hover, .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        
+            .prev {
+                left: 10px;
+                transform: translateY(-50%);
+            }
+        
+            .next {
+                right: 10px;
+                transform: translateY(-50%);
+            }
+        
+            /* Dots for navigation */
+            .dots-container {
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+                text-align: center;
+                z-index: 2;
+            }
+        
+            .dot {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin: 0 5px;
+                background-color: #bbb;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        
+            .dot.active {
+                background-color: #333;
+            }
+        
+            /* About Section */
+            .about {
+                text-align: center;
+                padding: 40px 20px;
+                background-color: #fff;
+                color: #333;
+                font-family: cursive;
+                text-align: center;
+            }
+        
+            .about h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+        
+            .about p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                padding: 0 20px;
+                text-align: left;
+            }
+
+            
+ footer {
+  background-color: #f0f3f8;
+  color: #0f0d0d;
+  text-align: center;
+  padding: 10px 0;
+}
+        
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .slideshow-container {
+                    height: 300px;
+                }
+        
+                .about p {
+                    font-size: 1rem;
+                }
+            }
+        
+            @media (max-width: 480px) {
+                .slideshow-container {
+                    height: 200px;
+                }
+        
+                .about p {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
+ <div class="slideshow-container">
+                <!-- Slides -->
+                <div class="slide active-slide">
+                    <img src="https://cvsqtgaxsa.cloudimg.io/https://images.prismic.io/indiahike/0afad85d-2c5f-474d-bc78-45766b1ae43b_Goechala_GCL_lsprasath_sunrise_mountain_.jpg?&func=crop&q=70&org_if_sml=1" alt="Pelling Bird Park - View 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="slide">
+                    <img src="https://www.clubmahindra.com/blog/media/section_images/gurudongma-c1c930bb7dcdc20.jpg" alt="Pelling Bird Park - View 2" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="slide">
+                    <img src="https://www.travelholicq.com/wp-content/uploads/2021/01/Lachung.jpg" alt="Pelling Bird Park - View 3" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="slide">
+                    <img src="https://content3.jdmagicbox.com/comp/namchi/h5/9999p3595.3595.190819084938.t1h5/catalogue/rose-garden-namchi-parks-py3k5i9wvv.jpg" alt="Pelling Bird Park - View 4" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="slide">
+                    <img src="https://live.staticflickr.com/4870/45690300412_d852189bda_h.jpg" alt="Pelling Bird Park - View 5" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                
+                <!-- Navigation buttons -->
+                <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        
+                <!-- Dots for navigation -->
+                <div class="dots-container">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        
+            <script>
+                let slideIndex = 1;
+        
+                // Function to show current slide
+                function showSlides() {
+                    const slides = document.querySelectorAll(".slide");
+                    const dots = document.querySelectorAll(".dot");
+        
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove("active-slide");
+                        dots[i].classList.remove("active");
+                    });
+        
+                    if (slideIndex > slides.length) {
+                        slideIndex = 1;
+                    } else if (slideIndex < 1) {
+                        slideIndex = slides.length;
+                    }
+        
+                    slides[slideIndex - 1].classList.add("active-slide");
+                    dots[slideIndex - 1].classList.add("active");
+        
+                    setTimeout(() => {
+                        slideIndex++;
+                        showSlides();
+                    }, 5000); // Auto slide change after 5 seconds
+                }
+        
+                // Function to move to the next/previous slide
+                function plusSlides(n) {
+                    slideIndex += n;
+                    showSlides();
+                }
+        
+                // Function to set a specific slide
+                function currentSlide(n) {
+                    slideIndex = n;
+                    showSlides();
+                }
+        
+                // Initial call to start the slideshow
+                showSlides();
+            </script>
+    <!-- Footer -->
+   <footer>
+        <div class="container">
+            <p>Contact us: +91 7047 59 8519</p>
+             <p><a href="https://sikkimtourism.gov.in" target="_blank" style="color: rgb(58, 56, 56); text-decoration: none; font-weight: bold;">Visit Sikkim Government Tourism</a></p>
+            <p>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" width="24" height="24">
+                </a>
+                   
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram" width="24" height="24">
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate on Scroll) library
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
+
+        // Smooth scrolling to destinations
+        function scrollToDestinations() {
+            document.querySelector('#destinations').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function for the search bar
+        function searchFunction() {
+            var input, filter, results, items, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            results = document.getElementById('search-results');
+            items = results.getElementsByClassName('result-item');
+            results.innerHTML = ''; // Clear the results before adding new ones
+
+            if (filter === '') {
+                results.style.display = 'none';
+                return;
+            }
+
+            // Placeholder example of destinations (you can change this to your actual search results)
+            var destinations = ['West', 'East', 'North', 'South'];
+            destinations.forEach(function(destination) {
+                if (destination.toUpperCase().indexOf(filter) > -1) {
+                    var div = document.createElement('div');
+                    div.classList.add('result-item');
+                    div.textContent = destination;
+                    div.onclick = function() {
+                        input.value = destination;
+                        results.innerHTML = '';
+                        results.style.display = 'none';
+                    };
+                    results.appendChild(div);
+                }
+            });
+
+            results.style.display = results.innerHTML ? 'block' : 'none';
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const stars = document.querySelectorAll('.star');
+  
+    stars.forEach(star => {
+      star.addEventListener('click', function () {
+        const rating = this.getAttribute('data-value');
+  
+        stars.forEach(s => {
+          if (s.getAttribute('data-value') <= rating) {
+            s.classList.add('selected');
+          } else {
+            s.classList.remove('selected');
+          }
+        });
+      });
+    });
+  });
+  const searchResults = document.getElementById("search-results");
+const searchInput = document.getElementById("search-input");
+
+// Sample search data (could be URLs or page names)
+const data = [
+  { name: "Experince", url: "share-experience" },
+  { name: "Barsey", url: "barsey" },
+  { name: "Goecha la ", url: "Goecha-la" },
+  { name: "Gurudongmar Lake", url: "Gurudongmar-Lake" },
+  { name: "KCHEOPARI", url: "KCHEOPARI" },
+  { name: "Lachen", url:"Lachen"},
+  { name: "lachung", url: "lachung" },
+  { name: "south", url: "south" },
+  { name: "west", url: "south" },
+  { name: "east", url: "east" },
+  { name: "north", url: "north" },
+  { name: "rabdentse", url: "rabdentse" },
+  { name: "Shingba Rhododendron Sanctuary", url: "Shingba-Rhododendron-Sanctuary" },
+  { name: "Sidkeong Tulku Bird Park", url: "Sidkeong-Tulku-Bird-Park" },
+  { name: "singsore", url: "singsore" },
+  { name: "skywalk", url: "skywalk" },
+  { name: "yumthang valley", url: "yumthang-valley" },
+  { name: "Pakyong", url: "pakyong" },
+  { name: "soreng", url: "soreng" }, 
+  { name: "Gurudongmar lake", url: "Gurudongmar-Lake" }, 
+  { name: "Temi Tea garden", url: "Temi-Tea-Garden" }, 
+  { name: "Samdruptse hill ", url: "Samdruptse-Hill" }, 
+  { name: "Rose Garden", url: "Rose-Garden" }, 
+  { name: "Tarey bhir", url: "Tarey-Bhir" }, 
+  { name: "Char Dham ", url: "Char-Dham" }, 
+  { name: "Buddha Park", url: "Buddha-Park" },
+  { name: "Hanuman Tok", url: "hanuman-tok" },  
+  { name: "Buddha Park", url: "Buddha-Park" },  
+  { name: "Buddha Park", url: "Buddha-Park" },    
+  { name: "Buddha Park", url: "Buddha-Park" },
+  { name: "Buddha Park", url: "Buddha-Park" },  
+  { name: "soreng", url: "soreng" }, 
+  { name: "Barsey Rhododendron", url: "Barsey-Rhododendron" }, 
+  { name: "Soreng Viewpoint", url: "Soreng-Viewpoint" }, 
+  { name: "Sai Mandir", url: "Sai-Mandir" }, 
+  { name: "Ramidham", url: "Ramidham" }, 
+
+];
+
+  searchInput.addEventListener("keyup", function () {
+            let query = searchInput.value.toLowerCase();
+            searchResults.innerHTML = "";
+            if (query.length > 0) {
+                let filteredResults = data.filter(item => item.name.toLowerCase().includes(query));
+                filteredResults.forEach(function (result) {
+                    let resultItem = document.createElement("div");
+                    resultItem.className = "result-item";
+                    resultItem.innerHTML = result.name;
+                    resultItem.addEventListener("click", function () {
+                        window.location.href = result.url;
+                    });
+                    searchResults.appendChild(resultItem);
+                });
+                searchResults.style.display = "block";
+            } else {
+                searchResults.style.display = "none";
+            }
+        });
+
+        // Navigate to the first search result when pressing Enter
+        searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                let firstResult = document.querySelector(".result-item");
+                if (firstResult) {
+                    window.location.href = firstResult.getAttribute("data-url");
+                }
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+                searchResults.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

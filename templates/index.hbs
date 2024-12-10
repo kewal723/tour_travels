@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+    
+
+    <title>Explore Your Dream Destination</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: transparent;
+            color: black;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .left a, .navbar .right a {
+            text-decoration: none;
+            color: black;
+            font-size: large;
+            padding: 12px 20px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .navbar .left a:hover, .navbar .right a:hover {
+            background-color: #f5f8fc;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        /* Search Bar Styles */
+      /* Search Bar Styles */
+.navbar .search-bar {
+    padding: 8px 15px;
+    font-size: 16px;n
+    border-radius: 25px;
+  /* Light border */
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.navbar .search-bar:hover {
+    border-color: #e67e22; /* Change border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.navbar .search-bar input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Search Icon (Visible on Mobile) */
+.navbar .search-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar .search-icon:hover {
+    color: #e67e22; /* Change icon color on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+
+/* Search Results Container */
+.search-results {
+    position: absolute;
+    top: 70px;  /* Increase this value to push the results lower */
+    left: 46%;
+    transform: translateX(-50%);
+    width: 250px;  /* Set a width for better alignment */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;  /* Add scroll if there are too many results */
+    z-index: 10;
+    display: none; /* Initially hidden */
+}
+
+/* Search Result Item */
+.search-results .result-item {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #ddd;  /* Adds a subtle line between items */
+}
+
+.search-results .result-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Optional: Add a scrollbar style */
+.search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+        /* Hero Section */
+        .hero {
+    background-image: url('https://images.pexels.com/photos/2610219/pexels-photo-2610219.png?cs=srgb&dl=pexels-shuvrasankha-2610219.jpg&fm=jpg');
+    background-size: cover;
+    background-position: center 10%;  /* Adjust to move the image up slightly */
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 90px; /* Add padding at the bottom to prevent content from cutting */
+}
+
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero .cta-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #999693;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero .cta-btn:hover {
+            background-color: #66978d;
+        }
+
+        /* Explore Section */
+        .explore {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #ecf0f1;
+        }
+
+        .explore .destination {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .explore .destination img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .explore .destination .text {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .explore .destination:hover {
+            transform: scale(1.05);
+        }
+
+        /* Read More Section */
+        .read-more {
+            display: none;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .read-more h3 {
+            font-size: 2rem;
+        }
+
+        .read-more p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+      font-size: 2rem;
+      color: #333;
+      animation: slideInOut 4s infinite;
+      padding-left: 900px;
+      font-family: cursive;
+    }
+
+    @keyframes slideInOut {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      25% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      75% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .explore {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            /* Hide the search bar on mobile */
+            .navbar .search-bar {
+                display: none;
+            }
+
+            /* Show the search icon on mobile */
+            .navbar .search-icon {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .explore {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* Hide the search bar on mobile */
+            .navbar .search-bar {
+                display: none;
+         
+            }
+
+            .navbar .search-icon {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                color: white;
+            }
+        }
+
+        .footer{
+            padding-left: 60px;
+            font-size: 22px;
+            font-family: cursive;
+        }
+
+      /* Responsive Design for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        background-position: center 20%;  /* Adjust to ensure the image is centered properly on smaller screens */
+        height: 80vh; /* Reduce the height on smaller screens to make it fit better */
+        padding-bottom: 30px; /* Adjust bottom padding for smaller screens */
+    }
+
+    /* Move the Read More button slightly up */
+    .hero .cta-btn {
+        margin-top: -20px; /* Adjust this value to move it up as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background-position: center;  /* Fully center the image on very small screens */
+        height: 70vh; /* Reduce height even more for very small screens */
+    }
+
+    /* Move the Read More button up further */
+    .hero .cta-btn {
+        margin-top: -50px; /* Move it up further for very small screens */
+    }
+}
+ 
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+    <div class="left">
+        <a href="/about">About</a>
+        <A href="/signup">SignUp</A>
+        
+    </div>
+    <div class="search-icon" onclick="toggleSearchBar()">🔍</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search destinations..." id="searchInput">
+    </div>
+    <style>
+        .topnav .logo {
+    display: flex;
+    align-items: center;
+}
+    </style>
+     <a href="index"> <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a> 
+    <!-- Add the results container here -->
+    <div class="search-results" id="search-results"></div>
+</div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        
+    <a href="/index-new">   <button class="cta-btn" onclick="toggleReadMore()">Click here to Explore</button></a>
+    </div>
+
+    <!-- Explore Section -->
+    <div class="explore">
+        <div class="destination">
+            <img src="https://t3.ftcdn.net/jpg/02/17/77/00/360_F_217770038_o4rs13TGuc1Peh0FOUn6QLFU6xLQe4RJ.jpg" alt="Beach">
+            <div class="text">
+                <h2> Getaways</h2>
+            </div>
+        </div>
+        <div class="destination">
+            <img src="https://t4.ftcdn.net/jpg/03/63/10/65/360_F_363106571_Imd4VbScmpS22xFZj6BnhpILkIGvuIa3.jpg" alt="Mountain">
+            <div class="text">
+                <h2>Mountain Escapes</h2>
+          
+            </div>
+        </div>
+        <div class="destination">
+            <img src="https://t3.ftcdn.net/jpg/02/20/63/06/360_F_220630676_rqJEE1No3llfTpyqWbCuRYv8gG2Vi3pQ.jpg" alt="City">
+            <div class="text">
+                <h2>City Adventures</h2>
+      
+            </div>
+        </div>
+    </div>
+
+    <!-- Read More Section -->
+  
+    <!-- Footer -->
+   
+    <div class="footer">
+        "Explore the beauty of Sikkim!"
+      </div>
+    <script>
+        // Function to toggle the Read More section
+        function toggleReadMore() {
+            const readMoreSection = document.getElementById('readMoreSection');
+            readMoreSection.style.display = readMoreSection.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to toggle the Search Bar visibility on mobile
+        function toggleSearchBar() {
+            const searchBar = document.querySelector('.search-bar');
+            searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Example JavaScript for handling the search input
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            console.log('Searching for:', searchInput.value);
+        });
+
+        const searchResults = document.getElementById("search-results");
+      
+
+        // Sample search data (could be URLs or page names)
+        const data = [
+            { name: "Experience", url: "share-experience" },
+            { name: "Barsey", url: "barsey" },
+            { name: "Goecha la", url: "Goecha-la" },
+            { name: "Gurudongmar Lake", url: "Gurudongmar-Lake" },
+            { name: "KCHEOPARI", url: "KCHEOPARI" },
+            { name: "Lachen", url: "Lachen" },
+            { name: "Lachung", url: "lachung" },
+            { name: "South", url: "south" },
+            { name: "West", url: "west" },
+            { name: "East", url: "east" },
+            { name: "North", url: "north" },
+            { name: "Rabdentse", url: "rabdentse" },
+            { name: "Shingba Rhododendron Sanctuary", url: "Shingba-Rhododendron-Sanctuary" },
+            { name: "Sidkeong Tulku Bird Park", url: "Sidkeong-Tulku-Bird-Park" },
+            { name: "Singsore", url: "singsore" },
+            { name: "Skywalk", url: "skywalk" },
+            { name: "Yumthang Valley", url: "yumthang-valley" },
+            { name: "Pakyong", url: "pakyong" },
+            { name: "soreng", url: "soreng" }, 
+            { name: "Gurudongmar lake", url: "Gurudongmar-Lake" }, 
+            { name: "Temi Tea garden", url: "Temi-Tea-Garden" }, 
+            { name: "Samdruptse hill ", url: "Samdruptse-Hill" }, 
+            { name: "Rose Garden", url: "Rose-Garden" }, 
+            { name: "Tarey bhir", url: "Tarey-Bhir" }, 
+            { name: "Char Dham ", url: "Char-Dham" }, 
+            { name: "Buddha Park", url: "Buddha-Park" }, 
+            { name: "Barsey Rhododendron", url: "Barsey-Rhododendron" }, 
+            { name: "Soreng Viewpoint", url: "Soreng-Viewpoint" }, 
+            { name: "Sai Mandir", url: "Sai-Mandir" }, 
+            { name: "Ramidham", url: "Ramidham" }
+        ];
+
+        searchInput.addEventListener("keyup", function () {
+            let query = searchInput.value.toLowerCase();
+            searchResults.innerHTML = "";
+            if (query.length > 0) {
+                let filteredResults = data.filter(item => item.name.toLowerCase().includes(query));
+                filteredResults.forEach(function (result) {
+                    let resultItem = document.createElement("div");
+                    resultItem.className = "result-item";
+                    resultItem.innerHTML = result.name;
+                    resultItem.addEventListener("click", function () {
+                        window.location.href = result.url;
+                    });
+                    searchResults.appendChild(resultItem);
+                });
+                searchResults.style.display = "block";
+            } else {
+                searchResults.style.display = "none";
+            }
+        });
+
+        // Navigate to the first search result when pressing Enter
+        searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                let firstResult = document.querySelector(".result-item");
+                if (firstResult) {
+                    window.location.href = firstResult.getAttribute("data-url");
+                }
+            }
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!searchInput.contains(event.target) && !searchResults.contains(event.target)) {
+                searchResults.style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+</html>

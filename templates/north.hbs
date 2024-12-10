@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Places to Visit near Gangtok</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.topnav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+
+.topnav .left-menu {
+  display: flex;
+  align-items: center;
+}
+
+.topnav .left-menu a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: larger;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topnav .left-menu a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topnav .search {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.topnav .search input {
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.topnav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.header img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.header .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #2E8B87;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  margin: 0 15px;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: cursive;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover img {
+  transform: scale(1.1);
+}
+
+.div {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 12px;
+}
+
+.destinations {
+  padding: 4rem 0;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.destinations h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.destination-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination {
+  flex: 0 1 30%;
+  margin-bottom: 12rem;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.destination h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.destination p {
+  padding: 0 1rem 1rem;
+}
+
+.destination:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.rating {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected,
+.star:hover~.star {
+  color: #f5c518;
+}
+
+.btn1 {
+  padding-left: 6px;
+  padding-bottom: 6px;
+  border-radius: 8px;
+  border: none;
+}
+
+.container1 {
+  background-color: #dde0dd;
+  height: 100%;
+  padding-top: 45px;
+  text-align: center;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) {
+  .topnav {
+    flex-direction: column;
+  }
+
+  .topnav .left-menu,
+  .topnav .search {
+    margin: 0;
+  }
+
+  .header .title {
+    font-size: 36px;
+  }
+
+  .menu {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .menu-item {
+    margin: 10px 0;
+  }
+
+  .destination-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination {
+    flex: 0 1 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header img {
+    height: 200px;
+  }
+
+  .header .title {
+    font-size: 28px;
+  }
+
+  .menu-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .destinations h2 {
+    font-size: 2rem;
+  }
+
+  .destination h3 {
+    font-size: 1.2rem;
+  }
+
+  .destination {
+    flex: 0 1 90%;
+    margin-bottom: 2rem;
+  }
+
+  .destination p {
+    font-size: 0.9rem;
+  }
+
+  .rating .star {
+    font-size: 20px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+      <a href="/share-experience">Experience</a>
+      <a href="about">About</a>
+      <a href="/create-blog">Blogs</a>
+    </div>
+
+    <div class="logo">
+   <a href="/index">   <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a>
+    </div>
+  </div>
+
+  <div class="header">
+    <img src="https://poonawallafincorp.com/pfca/assets/blog_banner/blog_banner-banner-image-tourist-places-in-sikkim.png" alt="Header Image">
+    Best Places to Visit in North Sikkim <div class="title">Best Places to Visit in North Sikkim</div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-item">
+      <a href="/Gurudongmar-Lake"><img src="https://i0.wp.com/www.scaleindigo.com/wp-content/uploads/2022/12/Sikkim-Gurudongmar-Lake-via-Ankit-Anil-Agarwal-NorthEast-India-by-Scale-Indigo-scaled.jpg?fit=2560%2C1921&ssl=1" alt="Best Selling"> </a>
+      <p>Gurudongmar Lake</p>
+    </div>
+    <div class="menu-item">
+    <a href="/Lachen"><img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/12/2cd59082c2a621e4ced91c2eb1499e33_1000x1000.jpg"
+        alt="Popular Group"> </a>
+      <p>Lachen</p>
+    </div>
+    <div class="menu-item">
+      <a href ="/lachung"><img src="https://asia-south1-nature-beyond.cloudfunctions.net/NextImageOptimizer?url=https://storage.googleapis.com/nature-beyond.appspot.com/Le-Cocxi-Lachung-North-Sikkim_1678114871189.JPG&width=3840&quality=75" alt="Best Sellers">
+      </a><p>Lachung</p>
+    </div>
+    <div class="menu-item">
+      <a href="/yumthang-valley"><img src="https://holidays.tripfactory.com/sikkim/wp-content/uploads/sites/18/2024/05/Yumthang-Valley.webp"
+        alt="Tours"></a>
+      <p>Yumthang-Valley</p>
+    </div>
+    <div class="menu-item">
+      <a href="/Shingba-Rhododendron-Sanctuary"><img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS60V_uqBq7Bb-tm90f2HSajqZ4Gxgr2v233A&s"
+        alt="Tours"></a>
+      <p>Shingba Rhododendron  </p>
+    </div>
+    <div class="menu-item">
+      <a href="/Goecha-La"><img
+        src="data:image/jpeg;base64,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"
+        alt="Tours"></a>
+      <p>Goecha La</p>
+    </div>
+  </div>
+  <div class="div">
+    <h2 style="text-align: center; padding-top: 41px; font-size: 30px; font-family: cursive;"> About us </h2>
+    <P style="font-size: larger;">North Sikkim is a pristine and awe-inspiring region, known for its rugged landscapes, snow-capped peaks, and rich biodiversity. The region is home to some of the most iconic destinations in Sikkim, such as Yumthang Valley, Lachung, and the majestic Gurudongmar Lake, which sits at an altitude of over 17,000 feet. With its alpine meadows, serene rivers, and lush forests, North Sikkim offers a tranquil escape for nature lovers and trekkers. The area is also renowned for its rich Tibetan culture and monasteries, making it a unique blend of natural beauty and spiritual significance.. North Sikkim is a place where snow-covered mountains meet alpine forests, crystal-clear rivers, and fields of colorful flowers. Its remote location ensures it remains untouched by urbanization, preserving its pristine charm and making it a must-visit for those seeking peace, adventure, and cultural richness.
+    </P>
+  </div>
+  <h4 style="padding: 40px; text-align: center; font-size: 30px; font-family: cursive;"> Hotels and Stays in Gangtok</h4>
+  <div class="destination-container">
+    <div class="destination" data-aos="fade-up">
+
+
+        <img style="height: 60%;" src="https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/201602232257519529-d7896cc6cdf411e8bcf70242ac110006.jpg?&downsize=520:350&crop=520:350;81,0&output-format=jpg">
+      </a>
+      <h3 style="font-family: cursive;">Rufina Lachung Deezong</h3>
+      <p>"Rufina in Lachung, North Sikkim, is where the clouds touch the peaks, and every breath feels like an offering to the majestic Himalayas."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+    
+        <img  style="height: 60%;" src ="https://lh5.googleusercontent.com/p/AF1QipPH_P4VMjnbByPO6pWFEl4DMeuXLzBADSw_oHlt=w408-h271-k-no"> 
+      </a>
+      <h3 style="font-family: cursive;"> Yashshree  Lachung </h3>
+      <p style="font-family: roboto;">"Lachung's Yashshree, with its serene landscapes and towering peaks, is a reminder of the purity and grandeur of the Himalayan wilderness."</p>
+      <div class="rating">
+        
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+
+        <img style="height: 60%;"
+          src="https://lh3.googleusercontent.com/proxy/nwr8eGh7YzBiXTB4Qy0mcH3nIuBIGr1n9CK2cOab2BaeJKc-MYBs61WEkk2mVh7Mix26OTPzuKJo_Iu4STKiYMk0_qqfFjbW1X4nG9jS5HUmrq_jE5QK7Ro4jwrWrVQmbIZ7HnL5H_qDrUPfHlkkJy4vsjNd0A=w253-h168-k-no">
+      </a>
+      <h3 style="font-family: cursive;">
+        Fortuna Sapphire Resort</h3>
+      <p style="font-family: roboto;">"Experience the perfect harmony of modern elegance and natural splendor at Fortuna Sapphire Resort, your gateway to the untouched beauty of North Sikkim."</p>
+      <div class="rating">
+        
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+      <a>
+        <img
+          src="https://lh3.googleusercontent.com/proxy/Hr2vwJhv1pKoxXIqGeBUFwBz6XxGp4OpWJnqvzZcFHN7G3HOm3Jy4TbWnvm7atWUb7FqtIWuyqsie8DFW4x0YBlqkVQs9J2unW4Y-C5izTKtSZ4r5ReXzzLminpZCLETBdjSPPLeTZqq_Zr9lQ-Q8c7pFw5OG2o=w287-h192-n-k-rw-no-v1">
+      </a>
+      <h3 style="font-family: cursive;">
+        Yarlam Resort Lachung</h3>
+      <p style="font-family: roboto;">"Yarlam Resort in Lachung offers a peaceful sanctuary where the majestic mountains embrace you, and every moment spent amidst nature’s grandeur becomes a cherished memory."</p>
+      <div class="rating">
+        
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+ 
+        <img
+          src="https://lh5.googleusercontent.com/p/AF1QipNPjoJafgNDErtHfti82eY0AAlEJlGUN7lXiuA=s287-w287-h192-n-k-no-v1">
+      </a>
+      <h3 style="font-family: cursive;">
+        Keerong Cottages</h3>
+      <p style="font-family: roboto;">"In the heart of North Sikkim, Keerong Cottages provides a cozy refuge where the beauty of nature meets the comfort of home."</p>
+      <div class="rating">
+        
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+ 
+        <img
+          src="https://lh5.googleusercontent.com/p/AF1QipM9MFTNcMAKoto6Qqk-1ZkDYpQrqUAC9pPVnxho=s287-w287-h192-n-k-no-v1">
+      </a>
+      <h3 style="font-family: cursive;">
+        Munlom Nature Resort</h3>
+      <p style="font-family: roboto;">"Munlom Nature Resort offers a tranquil retreat, where the beauty of North Sikkim’s untouched wilderness surrounds you, offering a true escape from the hustle and bustle of everyday life."</p>
+      <div class="rating">
+       
+      </div>
+
+    </div>
+    </div>
+
+      
+      
+    </div>
+
+    <script></script>
+</body>
+
+</html>
+

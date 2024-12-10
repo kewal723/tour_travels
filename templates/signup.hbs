@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            background: url('https://wallpapercave.com/wp/wp4069431.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.63);
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 350px;  /* Increased width */
+            height: auto;  /* Auto height for dynamic content */
+            max-height: 600px;  /* Maximum height to prevent the form from becoming too tall */
+            overflow-y: auto;  /* Allows scrolling if content overflows */
+        }
+
+        .signup-container:hover {
+            transform: translateY(-10px); /* Subtle hover effect */
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 10px; /* Reduced margin to make it more compact */
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        select {
+            padding: 6px;  /* Reduced padding for smaller height */
+            margin-top: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #00bcd4;
+            box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+        }
+
+        input[type="submit"] {
+            padding: 12px;  /* Reduced padding */
+            margin-top: 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0097a7;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(2px);
+        }
+
+        select {
+            appearance: none;
+            background-color: #fff;
+            color: #333;
+            padding-right: 35px; /* Space for the dropdown arrow */
+            background-image: url('https://img.icons8.com/ios/452/down-chevron.png');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+
+        .form-group select {
+            margin-top: 10px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 480px) {
+            .signup-container {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="submit"] {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Create Your Account</h2>
+
+        <!-- Form for user sign up -->
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" placeholder="Enter your age"  required max="100" >
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Sign Up">
+             <p>Already have an account? <a href="/login" style="text-decoration: none;">login here</a></p>
+        </form>
+    </div>
+
+</body>
+</html>

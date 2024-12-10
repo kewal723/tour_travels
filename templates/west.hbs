@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Places to Visit near Gangtok</title>
+  <style>
+    /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Top navigation styles */
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 0.5rem 1rem;
+}
+
+.topnav .left-menu {
+    display: flex;
+    align-items: center;
+}
+
+.topnav .left-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: larger;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topnav .left-menu a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topnav .search {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.topnav .search input {
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.topnav .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Header section styles */
+.header {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.header .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+/* Menu styles */
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #2b401b;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(10, 238, 40, 0.1);
+    font-family: cursive;
+    font: bolder;
+}
+
+.menu-item {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color:white;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Destinations section styles */
+.destinations {
+    padding: 4rem 0;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.destinations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: cursive;
+}
+
+.destination-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+}
+
+.destination {
+    flex: 0 1 30%;
+    margin-bottom: 12rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.destination h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-family: cursive;
+}
+
+.destination p {
+    padding: 0 1rem 1rem;
+    font-family: cursive;
+}
+
+.destination:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Button styles */
+.btn1 {
+    padding-left: 6px;
+    padding-bottom: 6px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Container1 styles */
+.container1 {
+    background-color: #dde0dd;
+    height: 100%;
+    padding-top: 45px;
+    text-align: center;
+}
+
+/* No underline style for links */
+.no-underline {
+    text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Adjust the font size of the header title */
+    .header .title {
+        font-size: 2rem;
+    }
+
+    /* Change the menu layout to a column */
+    .menu {
+        flex-direction: column;
+        padding: 20px;
+        
+    }
+
+    .menu-item {
+        margin: 10px 0;
+        
+    }
+
+    .destination-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination {
+        flex: 0 1 100%;
+        margin-bottom: 2rem;
+    }
+
+    .destination h3 {
+        font-size: 1.2rem;
+    }
+
+    .rating .star {
+        font-size: 20px;
+    }
+}
+
+/* For mobile phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Reduce header title size further */
+    .header .title {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust destination layout for mobile */
+    .destination-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination {
+        flex: 0 1 100%;
+        margin-bottom: 1rem;
+    }
+
+    .menu-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .destination h3 {
+        font-size: 1rem;
+        
+    }
+
+    /* Make buttons smaller */
+    .btn1 {
+        padding: 4px 8px;
+    }
+}
+
+/* For large screens (min-width: 1200px) */
+@media screen and (min-width: 1200px) {
+    .header .title {
+        font-size: 4rem;
+    }
+
+    .destination-container {
+        justify-content: space-between;
+    }
+
+    .destination {
+        flex: 0 1 30%;
+    }
+
+    .menu {
+        padding: 20px 70px;
+    }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="topnav">
+    <div class="left-menu">
+      <a class="active"></a>
+  
+      <a href="/share-experience">Experience</a>
+      <a href="about">About</a>
+      <a href="/create-blog">Blogs</a>
+    
+    </div>
+
+    <div class="logo">
+    <a href="index"> <img src="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" alt="Logo" height="40"></a> 
+    </div>
+  </div>
+
+  <div class="header">
+    <img src="https://www.travelholicq.com/wp-content/uploads/2021/05/Places-To-Visit-In-West-Sikkim.jpg" alt="Header Image ">
+    Best Places to Visit in West Sikkim <div class="title">Best Places to Visit in West Sikkim</div>
+
+  </div>
+  <div class="menu">
+    <div class="menu-item">
+      <a href="/singsore"><img src="https://homestayssikkim.com/wp-content/uploads/2023/07/Pelling-Tour-Package-2.jpeg" alt="Best Selling"> </a>
+      <p>Singsore bridge</p>
+    </div>
+    <div class="menu-item">
+    <a href="/skywalk"><img src="https://res.cloudinary.com/kmadmin/image/upload/v1618572985/kiomoi/Pelling_Sky_walk_1618572984404.jpg"
+        alt="Popular Group"> </a>
+      <p>Skywalk</p>
+    </div>
+    <div class="menu-item">
+      <a href="/rabdentse" ><img src="https://www.travel-video.info/images/monuments/Pelling_Rabdentse__JMP6203.jpg" alt="Best Sellers">
+      </a><p>Rabdentse Ruins</p>
+    </div>
+    <div class="menu-item">
+      <a href="/KCHEOPARI"><img src="https://www.citybit.in/wp-content/uploads/2023/09/Khecheopalri-Lake.jpg"
+        alt="Tours">
+     </a> <p>Khecheopalri Lake</p>
+    </div>
+    <div class="menu-item">
+      
+      <a href="/Sidkeong-Tulku-Bird-Park"><img src="https://www.rural.tourism.gov.in/images/attraction/Sidkeong-Tulku-Bird-Park-3.jpg"
+        alt="Tours"></a>
+      <p>Sidkeong Tulku</p>
+    </div>
+    <div class="menu-item">
+      
+        <a href="/barsey"><img src="https://blog.izifiso.com/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-11-at-17.16.25-edited.jpg"
+        alt="Tours"></a>
+      <p>Barsey Rhododendron</p>
+    </div>
+  </div>
+  <div class="div">
+    <h2 style="text-align: center; padding-top: 41px; font-size: 30px; font-family: cursive;"> About us </h2>
+    <P style="text-align: center;  font-family: roboto;font-size: larger;">West Sikkim is often identified by its enchanting blend of rugged landscapes, vibrant rhododendron forests, and the mesmerizing backdrop of Kanchenjunga, the third-highest peak in the world. It is a land where tradition and nature harmonize beautifully—famous for its spiritual sanctuaries, like the Pemayangtse Monastery, and its adventurous trekking routes, such as the Singalila Ridge and Barsey Rhododendron Sanctuary. The unique charm of West Sikkim lies in its untouched natural beauty, its tranquil atmosphere, and its cultural richness, making it a haven for both spiritual seekers and nature lovers.</P>
+  </div>
+  <h4 style="padding: 50px; text-align: center; font-size: 30px;font-family: cursive;"> Hotels and Stays in West Sikkim</h4>
+  <div class="destination-container">
+    <div class="destination" data-aos="fade-up">
+      
+
+        <img style="height: 60%;" src="data:image/jpeg;base64,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">
+      </a>
+      <h3>Emaho Boutique Resort</h3>
+      <p style="font-family: roboto;">In the heart of the Himalayas, where the mist dances with the mountains, Emaho Boutique Resort offers a peaceful escape, where every breath is a reminder of nature's quiet elegance."</p>
+      
+    </div>
+    <div class="destination" data-aos="fade-up">
+   
+        <img  style="height: 60%;" src ="https://static.wixstatic.com/media/7e72e8_5e8fe33e9d224572ab4711091fc7ba56f000.jpg/v1/fill/w_320,h_267,al_c,q_80,usm_0.33_1.00_0.00,enc_auto/7e72e8_5e8fe33e9d224572ab4711091fc7ba56f000.jpg"> 
+      </a>
+      <h3>  Mandarin  Village Resort </h3>
+      <p style="font-family: roboto;">"In the heart of West Sikkim, where mountains cradle the clouds and nature whispers in every breeze, Mandarin Village Resort offers a peaceful retreat, a place where time slows, and every moment feels like poetry against the Himalayan backdrop."</p>
+      <div class="rating">
+       
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+     
+        <img style="height: 60%;"
+          src="https://ghondayresort.com/images/intro.jpg">
+      </a>
+      <h3>
+        Ghonday Village Resort</h3>
+      <p style="font-family:roboto;">"Nestled in the quiet embrace of Kaluk, Ghonday Village Resort offers a front-row seat to the majesty of the Kanchenjunga, where dawn breaks over mountains, and each sunrise is a gentle promise of peace and wonder."</p>
+      <div class="rating">
+      
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+     
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/e7/7e/1d/guest-enjoying-snow.jpg?w=700&h=-1&s=1">
+      </a>
+      <h3>
+        Royal Barsey Homestay</h3>
+      <p style="font-family: roboto;">"At Royal Barsey Homestay in Okhrey, feel the warmth of Sikkimese hospitality as mist-kissed mornings meet the serenity of pine forests and rhododendron blooms. Here, every stay becomes a journey into nature's quiet magic, with Barsey’s trails just a heartbeat away.</p>
+      <div class="rating">
+      
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+      
+        <img
+          src="https://api.blessingsonthenet.com/uploads/hotels/97910b2b899b797a37b2c61933d68865-1693665985796-Magpie%20The%20Chestnut%20Retreat%20Pelling2.jpg">
+      </a>
+      <h3>
+        Magpie Pachhu Village Resort</h3>
+      <p style="font-family: roboto;">"At Magpie Pachhu Village Resort, every sunrise is a reminder of the beauty of West Sikkim. With its rustic charm and serene surroundings, it's the perfect place to unwind and reconnect with nature."</p>
+      <div class="rating">
+       
+      </div>
+
+    </div>
+    <div class="destination" data-aos="fade-up">
+   
+        <img
+          src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/495036879.jpg?k=f9c3d0bc6be5784adbd7470a2e6b12a0d0d5dfe7fa7a12194d6a6feb2bff0477&o=&hp=1">
+      </a>
+      <h3>
+        Norbulingka Retreat
+      </h3>
+      <p style="font-family: roboto;">"Discover the serenity of Sikkim at Norbulingka Retreat, where every moment is a peaceful escape. Surrounded by lush greenery and majestic mountains, this retreat is a sanctuary for those seeking rest, rejuvenation, and a deep connection with nature."</p>
+      <div class="rating">
+      
+      </div>
+
+    </div>
+    </div>
+
+    
+      
+    </div>
+    
+</body>
+
+
+</html>
+

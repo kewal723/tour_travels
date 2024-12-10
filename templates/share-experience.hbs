@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6350/6350271.png" type="image/png">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Sharing</title>
+    <!-- Corrected path to CSS -->
+    <link rel="stylesheet" href="/experince (1).css">
+    <link rel="stylesheet" href="/experince_animation.css">
+</head>
+<style>
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #008080;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-image: url('https://www.bizportals365.com/wp-content/uploads/knowledge-sharing-best-practices.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(228, 227, 227, 0.952); /* Optional: Add text shadow for better readability */
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: -100px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: lightgoldenrodyellow;
+}
+
+.experience-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.experience-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+}
+
+.experience-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.experience-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#share-experience {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 88%;
+    padding: 10px;
+    border: 2px solid #008080;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+    background-color: #008080; /* Teal background color */
+    color: #fff; /* White text */
+    font-size: 1.1rem; /* Slightly larger text for better readability */
+    padding: 12px 24px; /* Adequate padding for a more comfortable click area */
+    border: none; /* Remove default button border */
+    border-radius: 8px; /* Rounded corners for a soft look */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: all 0.3s ease; /* Smooth transition for hover and active states */
+    text-transform: uppercase; /* Uppercase letters for a cleaner look */
+    font-weight: bold; /* Bold text for better visibility */
+}
+
+/* Hover Effect */
+button[type="submit"]:hover {
+    background-color: #006666; /* Darker teal color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
+}
+
+/* Active Effect (when clicked) */
+button[type="submit"]:active {
+    background-color: #004d4d; /* Even darker teal when the button is clicked */
+    transform: scale(0.98); /* Slightly shrink the button to indicate it's being pressed */
+}
+
+/* Focus Effect (when tabbed to) */
+button[type="submit"]:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px 2px rgba(0, 128, 128, 0.7); /* Add a custom focus outline */
+}
+
+footer {
+    background-color: #008080;;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 100px;
+}
+
+a {
+    text-decoration: none;
+    font-size: large;
+    color: #070707;
+}
+
+
+footer {
+  background-color: #74b8c4;
+  color: #0f0d0d;
+  text-align: center;
+  padding: 10px 0;
+}
+ 
+/* Media Queries for Responsiveness */
+
+/* For smaller screens like tablets */
+@media screen and (max-width: 768px) {
+    /* Adjusting the header text size */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Making the paragraph text a bit smaller */
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Make experience card content more compact */
+    .experience-card {
+        padding: 15px;
+    }
+
+    /* Adjust input fields to full width */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+    }
+
+    /* Adjust the experience card layout for smaller screens */
+    .experience-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Make buttons a bit smaller */
+    .share-btn {
+        padding: 10px 20px;
+    }
+
+    /* Make footer text smaller */
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* For smaller devices like mobile phones */
+@media screen and (max-width: 480px) {
+    /* Adjusting the header */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Adjust card layout for mobile */
+    .experience-cards {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+
+    /* Adjust form fields to full width */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+    }
+
+    /* Make buttons smaller */
+    .share-btn {
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 0.85rem;
+    }
+}
+
+/* For larger screens like desktops */
+@media screen and (min-width: 1200px) {
+    /* Increase the font size for header */
+    header h1 {
+        font-size: 3rem;
+    }
+
+    /* Adjust the experience card layout for large screens */
+    .experience-cards {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+    }
+
+    /* Adjust padding for the container */
+    .container {
+        padding: 40px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Apply animation to elements */
+.experience-card {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+ 
+
+
+</style>
+<body>
+    <header>
+        <div class="container">
+           <p><h1>Share Your Experience  Adventurer</h1></p>
+        </div>
+    </header>
+
+    <main>
+        <section id="experience">
+            <div class="container">
+                <div class="experience-cards" id="experience-cards">
+                    <!-- Experience cards will be dynamically populated here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="share-experience">
+            <div class="container">
+                <h2 style="color: black;">Share Your Experience</h2>
+                <img src="https://www.namasteindiatrip.com/wp-content/uploads/2019/08/Sikkim-Travel-HD.jpg" 
+                style="width: 200px; height: 200px; border-radius: 20px; display: inline-block; margin-right: 10px;">
+           
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/0c/e0/69/caption.jpg?w=600&h=400&s=1" 
+                style="width: 200px; height: 200px; border-radius: 20px; display: inline-block; margin-right: 10px;">
+           
+                <img src="https://www.tourmyindia.com/blog//wp-content/uploads/2021/05/Khecheopalri-Lake.jpg" 
+                style="width: 200px; height: 200px; border-radius: 20px; display: inline-block; margin-right: 10px;">
+                <form action="/share-experience" method="POST">
+                    <div>
+                        <label for="name">Your Name:</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                
+                    <div>
+                        <label for="email">Your Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                
+                    <div>
+                        <label for="story">Your Story:</label>
+                        <textarea name="story" id="story" rows="6" required></textarea>
+                    </div>
+                
+                     <button type="submit">Submit</button>
+                </form>
+            </div>
+ <footer>
+        <div class="container">
+            <p>Contact us: +91 7047 59 8519</p>
+             <p><a href="https://sikkimtourism.gov.in" target="_blank" style="color: rgb(58, 56, 56); text-decoration: none; font-weight: bold;">Visit Sikkim Government Tourism</a></p>
+            <p>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook" width="24" height="24">
+                </a>
+                   
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram" width="24" height="24">
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="/js/experince.js"></script>
+</body>
+</html>

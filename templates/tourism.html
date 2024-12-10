@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shri Sudesh Kumar Subba - Advisor, Department of Tourism and Civil Aviation</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 50px auto;
+        }
+
+        .bio {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .bio-card {
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .bio-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .bio-card h3 {
+            font-size: 1.8em;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .bio-card p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .bio-card ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 0.95em;
+        }
+
+        .bio-card ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer button {
+            padding: 15px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer button:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        footer button:active {
+            transform: translateY(2px);
+        }
+
+        footer p {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        /* Mobile and Small Screen Adjustments */
+        @media (max-width: 768px) {
+            .bio {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bio-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bio-card:nth-child(odd) {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .bio-card:nth-child(even) {
+            animation: fadeIn 1.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Shri Sudesh Kumar Subba</h1>
+        <p>Advisor - Department of Tourism and Civil Aviation, Sikkim</p>
+    </header>
+    
+    <section class="container">
+        <div class="bio">
+            <!-- Bio Card for Role and Responsibilities -->
+            <div class="bio-card">
+                <h3>Role & Responsibilities</h3>
+                <p>As the Advisor to the Department of Tourism and Civil Aviation, Shri Sudesh Kumar Subba plays a pivotal role in the development and promotion of tourism in Sikkim.</p>
+                <ul>
+                    <li>Advising on tourism policies and development strategies.</li>
+                    <li>Promoting sustainable tourism practices.</li>
+                    <li>Encouraging eco-tourism and adventure tourism.</li>
+                </ul>
+            </div>
+
+            <!-- Bio Card for Impact on Sikkim's Tourism -->
+            <div class="bio-card">
+                <h3>Impact on Tourism</h3>
+                <p>Shri Sudesh Kumar Subba has transformed Sikkim into a sought-after tourist destination by focusing on eco-tourism and cultural tourism.</p>
+                <ul>
+                    <li>Focused on preserving the natural beauty of Sikkim.</li>
+                    <li>Improved infrastructure and tourist facilities.</li>
+                    <li>Increased awareness about Sikkim’s rich heritage.</li>
+                </ul>
+            </div>
+
+            <!-- Bio Card for Contributions to Aviation -->
+            <div class="bio-card">
+                <h3>Contributions to Aviation</h3>
+                <p>His efforts in improving air connectivity, particularly with the development of Pakyong Airport, have opened up new avenues for tourism in Sikkim.</p>
+                <ul>
+                    <li>Enhanced accessibility for domestic and international tourists.</li>
+                    <li>Promoted air tourism to boost the local economy.</li>
+                </ul>
+            </div>
+
+            <!-- Bio Card for Vision for Sikkim's Tourism -->
+            <div class="bio-card">
+                <h3>Vision for Sikkim</h3>
+                <p>His vision is to make Sikkim a global leader in sustainable tourism, balancing development with environmental preservation.</p>
+                <ul>
+                    <li>Enhance sustainable tourism practices.</li>
+                    <li>Develop infrastructure to accommodate growing tourist demand.</li>
+                    <li>Promote cultural and adventure tourism globally.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <button id="toggleContent">Read More</button>
+        <p>&copy; 2024 Tour and Travel Sikkim</p>
+    </footer>
+
+    <script>
+        // Toggle "Read More" content visibility
+        document.getElementById('toggleContent').addEventListener('click', function() {
+            const bioCards = document.querySelectorAll('.bio-card');
+
+            bioCards.forEach(card => {
+                if (card.style.maxHeight) {
+                    card.style.maxHeight = null;
+                    this.innerText = 'Read More';
+                } else {
+                    card.style.maxHeight = card.scrollHeight + "px";
+                    this.innerText = 'Read Less';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
